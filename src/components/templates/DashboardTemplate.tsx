@@ -19,7 +19,7 @@ interface MainPageTemplateProps {
     | "In Door Patient"
     | "Out Door Patient";
 }
-const MainPageTemplate: React.FC<MainPageTemplateProps> = (props) => {
+const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [inputField, setInputField] = useState(false);
@@ -121,4 +121,4 @@ const MainPageTemplate: React.FC<MainPageTemplateProps> = (props) => {
   );
 };
 
-export default MainPageTemplate;
+export default DashboardTemplate;

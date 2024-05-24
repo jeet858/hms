@@ -1,7 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
-import { LoginForm, MainPageTemplate } from "~/components";
+import { LoginForm, DashboardTemplate } from "~/components";
 
 import { api } from "~/utils/api";
 
@@ -13,7 +13,7 @@ export default function Home() {
     return (
       <>
         <main className="flex h-full w-full">
-          <MainPageTemplate active_tile="Home"></MainPageTemplate>
+          <DashboardTemplate active_tile="Home"></DashboardTemplate>
         </main>
       </>
     );

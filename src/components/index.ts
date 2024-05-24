@@ -1,5 +1,5 @@
 import LoginForm from "./form/LoginForm";
-import MainPageTemplate from "./templates/MainPageTemplate";
+import DashboardTemplate from "./templates/DashboardTemplate";
 import NavigationTile from "./elements/NavigationTile";
 
-export { LoginForm, MainPageTemplate, NavigationTile };
+export { LoginForm, DashboardTemplate, NavigationTile };
