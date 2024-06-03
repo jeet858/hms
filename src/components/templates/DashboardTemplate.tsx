@@ -112,7 +112,7 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
             <Image src={group} alt="" className="h-fit w-fit" />
           </div>
           <div className="h-[95%] w-[95%] self-center justify-self-center overflow-y-scroll rounded-lg bg-white shadow-lg">
-            <div className="flex h-[2000px] w-full"></div>
+            <div className="flex w-full"></div>
             {props.children}
           </div>
         </div>

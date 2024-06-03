@@ -8,7 +8,7 @@ import { z } from "zod";
 const loginUserSchema = z.object({
   id: z.string(),
   password: z.string(),
-  user_type: z.string(),
+  // user_type: z.string(),
 });
 const prisma = new PrismaClient();
 const authOptions: AuthOptions = {
@@ -21,10 +21,10 @@ const authOptions: AuthOptions = {
       credentials: {
         id: { type: "text", placeholder: "user_id" },
         password: { label: "password", type: "password" },
-        user_type: { type: "text", placeholder: "" },
+        // user_type: { type: "text", placeholder: "" },
       },
       async authorize(credentials, req) {
-        const { id, password, user_type } = loginUserSchema.parse(credentials);
+        const { id, password } = loginUserSchema.parse(credentials);
 
         const user = await prisma.user.findUnique({ where: { id: id } });
 
