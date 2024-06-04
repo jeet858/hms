@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LoginForm, DashboardTemplate } from "~/components";
 
 import { api } from "~/utils/api";
+import Dashboard from "./dashboard";
 
 export default function Home() {
   const ses = useSession();
@@ -13,7 +14,7 @@ export default function Home() {
     return (
       <>
         <main className="flex h-full w-full">
-          <DashboardTemplate active_tile="Home"></DashboardTemplate>
+          <Dashboard />
         </main>
       </>
     );
