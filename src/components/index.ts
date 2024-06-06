@@ -1,5 +1,5 @@
 import LoginForm from "./form/LoginForm";
 import DashboardTemplate from "./templates/DashboardTemplate";
 import NavigationTile from "./elements/NavigationTile";
-
-export { LoginForm, DashboardTemplate, NavigationTile };
+import StatusTile from "./elements/StatusTile";
+export { LoginForm, DashboardTemplate, NavigationTile, StatusTile };

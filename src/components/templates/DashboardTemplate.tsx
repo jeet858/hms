@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../../../images/healthcare-logo.png";
-import group from "../../../images/group.png";
+import graph_icon from "../../../images/graph_icon.png";
+import bell_icon from "../../../images/bell_icon.png";
+import power_icon from "../../../images/power_icon.png";
 import Image from "next/image";
 import NavigationTile from "../elements/NavigationTile";
 import {
@@ -95,25 +97,32 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
               className={`h-full w-full bg-transparent ${inputField ? "flex" : "hidden"} text-center outline-none`}
             />
           </div>
-          <div className="flex items-center justify-center gap-x-4 text-white">
-            <div className="rounded-full bg-black p-2">
+          <div className="flex items-center justify-center gap-x-8 text-white">
+            <div className="rounded-full ">
               <FaUserAlt className="h-8 w-8" />
             </div>
             <div>
-              <FaBell className="h-8 w-8" />
+              <Image src={bell_icon} alt="" className="h-8 w-8" />
             </div>
             <div>
-              <FaPowerOff className="h-8 w-8" />
+              <Image src={power_icon} alt="" className="h-8 w-8" />
             </div>
           </div>
         </div>
         <div className="grid h-[95%] w-full">
-          <div className="absolute top-[25%] z-10 flex h-24 w-24 items-center justify-center rounded-full bg-white">
-            <Image src={group} alt="" className="h-fit w-fit" />
+          <div className="absolute top-[25%] z-10 flex  items-center justify-center rounded-full bg-white sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-16 lg:w-16 xl:h-24 xl:w-24">
+            <Image
+              src={graph_icon}
+              alt=""
+              className="sm:h-7 sm:w-7 md:h-10 md:w-10 lg:h-10 lg:w-10 xl:h-fit xl:w-fit"
+            />
           </div>
-          <div className="h-[95%] w-[95%] self-center justify-self-center overflow-y-scroll rounded-lg bg-white shadow-lg">
-            <div className="flex w-full"></div>
-            {props.children}
+
+          <div className="grid h-[95%] w-[94%] self-center justify-self-center overflow-y-scroll rounded-lg bg-white shadow-lg">
+            <div className="flex h-full w-[95%] self-end justify-self-end  sm:w-[93%] md:w-[92%] xl:w-[93%] 2xl:w-[95%]">
+              {props.children}
+            </div>
+
           </div>
         </div>
       </div>
