@@ -117,10 +117,12 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
               className="sm:h-7 sm:w-7 md:h-10 md:w-10 lg:h-10 lg:w-10 xl:h-fit xl:w-fit"
             />
           </div>
+
           <div className="grid h-[95%] w-[94%] self-center justify-self-center overflow-y-scroll rounded-lg bg-white shadow-lg">
             <div className="flex h-full w-[95%] self-end justify-self-end  sm:w-[93%] md:w-[92%] xl:w-[93%] 2xl:w-[95%]">
               {props.children}
             </div>
+
           </div>
         </div>
       </div>
