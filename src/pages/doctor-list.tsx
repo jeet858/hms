@@ -207,7 +207,7 @@ const DoctorList: React.FC = (props) => {
 
   return (
     <DashboardTemplate active_tile="Doctors">
-      <div className="m-5 ml-20 max-h-max ">
+      <div className="w-full">
         <div className="p-4">
           <CustomTable
             headers={headers}

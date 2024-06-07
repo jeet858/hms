@@ -27,33 +27,33 @@ const CustomTable: React.FC<TableProps> = (props) => {
       <div>
         <TotalRecords total={props.data.length} />
       </div>
-      <div className="rounded-lg border border-[#003A47] bg-[#F2F2F2] p-1 overflow-hidden">
+      <div className="rounded-lg border w-full border-[#003A47] bg-[#F2F2F2] p-1 overflow-hidden">
         <div className="overflow-x-auto">
-          {/* <div className="min-w-full rounded-lg border border-gray-300 bg-gray-100">
-            <div className="flex rounded-t-lg bg-gray-200">
+          <div className="w-full rounded-lg border border-gray-300 bg-gray-100">
+            <div className="flex rounded-t-lg w-full bg-gray-200">
               {props.headers.map((header, index) => (
                 <div
                   key={index}
-                  className="flex-1 border-r border-gray-300 px-4 py-2 font-bold"
+                  className={`flex-1 text-[14px]/[16.41px] p-[0.5%] border-r border-gray-300 ${index==0 ? "w-[10%]" :index==1?"w-[15%]":index==2?"w-[10%]":index==3?"w-[15%]":"w-[10%]"} font-bold`}
                 >
                   {header}
                 </div>
               ))}
             </div>
             {paginatedData.map((item, rowIndex) => (
-              <div key={rowIndex} className="flex border-t border-gray-300">
+              <div key={rowIndex} className="flex border-t w-full border-gray-300">
                 {props.headers.map((header, colIndex) => (
                   <div
                     key={colIndex}
-                    className="flex-1 border-r border-gray-300 px-4 py-2"
+                    className={`flex-1 p-[0.5%] text-[14px]/[16.41px] border-r border-gray-300 ${colIndex==0 ? "w-[10%]" :colIndex==1?"w-[15%]":colIndex==2?"w-[10%]":colIndex==3?"w-[15%]":"w-[10%]"}`}
                   >
                     {item[header]}
                   </div>
                 ))}
               </div>
             ))}
-          </div> */}
-          <table className="min-w-full rounded-lg table-fixed">
+          </div>
+          {/* <table className="min-w-full rounded-lg table-fixed">
             <thead>
               <tr className="bg-white-100">
                 {props.headers.map((header, index) => (
@@ -82,7 +82,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table> */}
           <div className="mt-4 flex items-center justify-between">
             <div>
               <label htmlFor="entries" className="mr-2">
