@@ -1,6 +1,6 @@
 import React from "react";
 import { DashboardTemplate } from "~/components";
-import AvailableDoctorBoxComponent from "~/components/doctor/AvailableDoctorBoxComponent";
+import AvailableDoctorBoxComponent from "~/components/elements/AvailableDoctorBoxComponent";
 
 const availabledoctor: React.FunctionComponent = () => {
   return (
