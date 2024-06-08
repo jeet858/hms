@@ -177,7 +177,7 @@ const DoctorList: React.FC = (props) => {
     "Gender",
     "Specialization",
     "Department",
-    "Contact-Number",
+    "ContactNumber",
     "EmailId",
     "Timings",
     "Days",
