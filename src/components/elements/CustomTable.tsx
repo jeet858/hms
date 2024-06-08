@@ -24,9 +24,9 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <TotalRecords total={props.data.length} />
-      </div>
+      </div> */}
       <div className="rounded-lg border w-full border-[#003A47] bg-[#F2F2F2] p-1 overflow-hidden">
         <div className="overflow-x-auto">
           <div className="w-full rounded-lg border border-gray-300 bg-gray-100">

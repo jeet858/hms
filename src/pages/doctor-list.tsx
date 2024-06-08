@@ -3,6 +3,22 @@ import { DashboardTemplate } from "~/components";
 import CustomTable from "~/components/elements/CustomTable";
 
 const DoctorList: React.FC = (props) => {
+  const [page,setPage]=useState<number>(1)
+  const render=()=>{
+    switch(page){
+      case 1:
+        return <CustomTable
+        headers={headers}
+        data={data}
+        // widths={widths}
+        // padding={paddings}          
+        />
+        break;
+      case 2:
+        return 
+
+    }
+  }
   const data = [
     {
       ID: 1,
@@ -207,14 +223,24 @@ const DoctorList: React.FC = (props) => {
 
   return (
     <DashboardTemplate active_tile="Doctors">
-      <div className="w-full">
-        <div className="p-4">
-          <CustomTable
+
+      <div className="w-full h-full p-[1%]">
+
+        <div>
+          <div className="p-4 w-full h-full">
+            <div>
+              <button onClick={()=>setPage(1)}>Doctor List</button><button onClick={()=>setPage(2)}>Add Doctor</button>
+            </div>
+          {/* <CustomTable
             headers={headers}
             data={data}
             // widths={widths}
             // padding={paddings}          
-            />
+            /> */}
+            <div>
+              {render()}
+            </div>
+        </div>
         </div>
       </div>
     </DashboardTemplate>
