@@ -34,7 +34,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
               {props.headers.map((header, index) => (
                 <div
                   key={index}
-                  className={`flex-1 text-[14px]/[16.41px] p-[0.5%] border-r border-gray-300 ${index==0 ? "w-[10%]" :index==1?"w-[15%]":index==2?"w-[10%]":index==3?"w-[15%]":"w-[10%]"} font-bold`}
+                  className={`flex text-[14px]/[16.41px] p-[0.5%] border-r border-gray-300 ${index==0 ? "w-[10%]" :index==1?"w-[15%]":index==2?"w-[10%]":index==3?"w-[15%]":"w-[10%]"} font-bold`}
                 >
                   {header}
                 </div>
@@ -45,7 +45,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 {props.headers.map((header, colIndex) => (
                   <div
                     key={colIndex}
-                    className={`flex-1 p-[0.5%] text-[14px]/[16.41px] border-r border-gray-300 ${colIndex==0 ? "w-[10%]" :colIndex==1?"w-[15%]":colIndex==2?"w-[10%]":colIndex==3?"w-[15%]":"w-[10%]"}`}
+                    className={`flex p-[0.5%] text-[14px]/[16.41px] border-r border-gray-300 ${colIndex==0 ? "w-[10%]" :colIndex==1?"w-[15%]":colIndex==2?"w-[10%]":colIndex==3?"w-[15%]":"w-[10%]"}`}
                   >
                     {item[header]}
                   </div>

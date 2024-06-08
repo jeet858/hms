@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { DashboardTemplate } from "~/components";
 import CustomTable from "~/components/elements/CustomTable";
+import AddDoctor from "~/components/form/AddDoctor";
 
 const DoctorList: React.FC = (props) => {
   const [page,setPage]=useState<number>(1)
-  const render=()=>{
-    switch(page){
-      case 1:
-        return <CustomTable
-        headers={headers}
-        data={data}
-        // widths={widths}
-        // padding={paddings}          
-        />
-        break;
-      case 2:
-        return 
-
-    }
-  }
+  
   const data = [
     {
       ID: 1,
@@ -221,6 +208,22 @@ const DoctorList: React.FC = (props) => {
   //   "10px",
   // ]
 
+  const render=()=>{
+    switch(page){
+      case 1:
+        return <CustomTable
+        headers={headers}
+        data={data}
+        // widths={widths}
+        // padding={paddings}          
+        />
+        break;
+      case 2:
+        return <AddDoctor/>
+        break;
+    }
+  }
+
   return (
     <DashboardTemplate active_tile="Doctors">
 
@@ -237,7 +240,7 @@ const DoctorList: React.FC = (props) => {
             // widths={widths}
             // padding={paddings}          
             /> */}
-            <div>
+            <div className="w-full">
               {render()}
             </div>
         </div>
