@@ -104,7 +104,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
             </div>
             <div className="flex items-center">
             <button
-                onClick={() => handlePageChange(currentPage - 1)}
+                onClick={() => handlePageChange(1)}
                 className="rounded  px-2 py-1"
                 disabled={currentPage === 1}
               >
@@ -128,7 +128,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 &gt;
               </button>
               <button
-                onClick={() => handlePageChange(currentPage + 1)}
+                onClick={() => handlePageChange(totalPages)}
                 className="rounded px-2 py-1"
                 disabled={currentPage === totalPages}
               >
