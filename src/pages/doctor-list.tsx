@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { DashboardTemplate } from "~/components";
-import CustomTable from "~/components/elements/CustomTable";
+import CustomTable from "~/components/tables/CustomTable";
 import AddDoctor from "~/components/form/AddDoctor";
 
 const DoctorList: React.FC = (props) => {
-  const [page,setPage]=useState<number>(1)
-  
+  const [page, setPage] = useState<number>(1);
+
   const data = [
     {
       ID: 1,
@@ -208,42 +208,35 @@ const DoctorList: React.FC = (props) => {
   //   "10px",
   // ]
 
-  const render=()=>{
-    switch(page){
+  const render = () => {
+    switch (page) {
       case 1:
-        return <CustomTable
-        headers={headers}
-        data={data}
-        // widths={widths}
-        // padding={paddings}          
-        />
-        break;
-      case 2:
-        return <AddDoctor/>
-        break;
-    }
-  }
-
-  return (
-    <DashboardTemplate active_tile="Doctors">
-
-      <div className="w-full h-full p-[1%]">
-
-        <div>
-          <div className="p-4 w-full h-full">
-            <div>
-              <button onClick={()=>setPage(1)}>Doctor List</button><button onClick={()=>setPage(2)}>Add Doctor</button>
-            </div>
-          {/* <CustomTable
+        return (
+          <CustomTable
             headers={headers}
             data={data}
             // widths={widths}
-            // padding={paddings}          
-            /> */}
-            <div className="w-full">
-              {render()}
+            // padding={paddings}
+          />
+        );
+        break;
+      case 2:
+        return <AddDoctor />;
+        break;
+    }
+  };
+
+  return (
+    <DashboardTemplate active_tile="Doctors">
+      <div className="h-full w-full p-[1%]">
+        <div>
+          <div className="h-full w-full p-4">
+            <div>
+              <button onClick={() => setPage(1)}>Doctor List</button>
+              <button onClick={() => setPage(2)}>Add Doctor</button>
             </div>
-        </div>
+            <div className="w-full">{render()}</div>
+          </div>
         </div>
       </div>
     </DashboardTemplate>
