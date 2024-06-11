@@ -2,9 +2,190 @@ import React, { useState } from "react";
 import { DashboardTemplate } from "~/components";
 import TileLayout from "~/components/layout/TileLayout";
 import ManageTile from "~/components/elements/ManageTile";
+import CustomTable from "../components/tables/CustomTable";
+import AddDoctorForm from "../components/form/AddDoctorForm";
 
-const Doctor: React.FC = (props) => {
+const Doctor: React.FC = () => {
   // const [page, setPage] = useState<number>(1);
+  const headers = [
+    "ID",
+    "Name",
+    "Gender",
+    "Specialization",
+    "Department",
+    "ContactNumber",
+    "EmailId",
+    "Timings",
+    "Days",
+  ];
+
+  const data = [
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+    {
+      ID: "DOC 101",
+      Name: "Dr. M. Kamruzzaman Mazumder",
+      Gender: "Male",
+      Specialization: "MBBS, MD ( Medicine)",
+      Department: "Medicine",
+      ContactNumber: "9830012300",
+      EmailId: "abc@gmail.com",
+      Timings: "10AM - 12 PM",
+      Days: "Mon - Sat",
+    },
+  ];
 
   return (
     <DashboardTemplate active_tile="Doctors">
@@ -23,7 +204,12 @@ const Doctor: React.FC = (props) => {
           </div>
           <div className="h-full w-full">
             <div className="w-full">
-              <TileLayout tileone={"Doctor List"} tiletwo={"Add Doctor"} />
+              <TileLayout
+                tileone={"Doctor List"}
+                tiletwo={"Add Doctor"}
+                children1={<CustomTable headers={headers} data={data} />}
+                children2={<AddDoctorForm />}
+              />
             </div>
           </div>
         </div>

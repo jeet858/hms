@@ -9,188 +9,11 @@ import AddDoctorForm from "../form/AddDoctorForm";
 interface Iprops {
   tileone: string;
   tiletwo: string;
+  children1: JSX.Element | JSX.Element[];
+  children2: JSX.Element | JSX.Element[];
 }
 
 const AddDoctor: React.FC<Iprops> = (props) => {
-  const headers = [
-    "ID",
-    "Name",
-    "Gender",
-    "Specialization",
-    "Department",
-    "ContactNumber",
-    "EmailId",
-    "Timings",
-    "Days",
-  ];
-
-  const data = [
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-    {
-      ID: "DOC 101",
-      Name: "Dr. M. Kamruzzaman Mazumder",
-      Gender: "Male",
-      Specialization: "MBBS, MD ( Medicine)",
-      Department: "Medicine",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      Timings: "10AM - 12 PM",
-      Days: "Mon - Sat",
-    },
-  ];
 
   const [activeTab, setActiveTab] = useState<"doctorList" | "addDoctor">(
     "doctorList",
@@ -224,14 +47,14 @@ const AddDoctor: React.FC<Iprops> = (props) => {
             <div>
               {/* Doctor list content goes here */}
               {/* <p>Doctor List Content</p> */}
-              <CustomTable headers={headers} data={data} />
+              {props.children1}
             </div>
           )}
           {activeTab === "addDoctor" && (
             <div>
               {/* Add doctor content goes here */}
               {/* <p>Add Doctor Content</p> */}
-              <AddDoctorForm/>
+              {props.children2}
             </div>
           )}
         </div>
