@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { DashboardTemplate } from "~/components";
 import CustomTable from "~/components/tables/CustomTable";
-import AddDoctor from "~/components/form/AddDoctor";
+import AddDoctor from "~/components/layout/TileLayout";
 
 const DoctorList: React.FC = (props) => {
   const [page, setPage] = useState<number>(1);

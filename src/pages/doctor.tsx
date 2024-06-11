@@ -1,53 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { DashboardTemplate } from "~/components";
 import CustomTable from "~/components/tables/CustomTable";
-import AddDoctor from "~/components/form/AddDoctor";
+import AddDoctor from "~/components/layout/TileLayout";
 import ManageDoctor from "~/components/elements/ManageDoctor";
 
-const DoctorList: React.FC = (props) => {
+const Doctor: React.FC = (props) => {
   const [page, setPage] = useState<number>(1);
-
-  // const widths = [
-  //   "100px",
-  //   "200px",
-  //   "50px",
-  //   "100px",
-  //   "150px",
-  //   "150px",
-  //   "100px",
-  //   "50px",
-  //   "100px",
-  // ];
-  // const paddings = [
-  //   "px-2",
-  //   "10px",
-  //   "10px",
-  //   "10px",
-  //   "10px",
-  //   "10px",
-  //   "10px",
-  //   "10px",
-  //   "10px",
-  // ]
-
-  // const render = () => {
-  //   switch (page) {
-  //     case 1:
-  //       return (
-  //         // <CustomTable
-  //         //   headers={headers}
-  //         //   data={data}
-  //         //   // widths={widths}
-  //         //   // padding={paddings}
-  //         // />
-  //         <p>xyz</p>
-  //       );
-  //       break;
-  //     case 2:
-  //       return <AddDoctor />;
-  //       break;
-  //   }
-  // };
 
   return (
     <DashboardTemplate active_tile="Doctors">
@@ -74,4 +32,4 @@ const DoctorList: React.FC = (props) => {
     </DashboardTemplate>
   );
 };
-export default DoctorList;
+export default Doctor;

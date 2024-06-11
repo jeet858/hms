@@ -218,7 +218,6 @@ const AddDoctor: React.FC<Iprops> = (props) => {
             </div>
           </button>
         </div>
-
         <div className="p-4">
           {activeTab === "doctorList" && (
             <div>
