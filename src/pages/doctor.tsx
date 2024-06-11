@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { DashboardTemplate } from "~/components";
-import AddDoctor from "~/components/layout/TileLayout";
+import TileLayout from "~/components/layout/TileLayout";
 import ManageTile from "~/components/elements/ManageTile";
 
 const Doctor: React.FC = (props) => {
-  const [page, setPage] = useState<number>(1);
+  // const [page, setPage] = useState<number>(1);
 
   return (
     <DashboardTemplate active_tile="Doctors">
@@ -23,7 +23,7 @@ const Doctor: React.FC = (props) => {
           </div>
           <div className="h-full w-full">
             <div className="w-full">
-              <AddDoctor tileone={"Doctor List"} tiletwo={"Add Doctor"} />
+              <TileLayout tileone={"Doctor List"} tiletwo={"Add Doctor"} />
             </div>
           </div>
         </div>
