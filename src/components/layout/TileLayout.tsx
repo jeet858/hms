@@ -22,9 +22,9 @@ const AddDoctor: React.FC<Iprops> = (props) => {
   return (
     <div className="p-4">
       <div className="rounded border-2 border-[#00000040] shadow">
-        <div className=" bg-blue-50 border flex space-x-1">
+        <div className="bg-blue-50 border border-white flex space-x-1">
           <button
-            className={`px-4 py-2 ${activeTab === "doctorList" ? "font-bold text-[#000000] bg-white border-white" : "text-[#000000]"}`}
+            className={`px-4 py-2 ${activeTab === "doctorList" ? "font-bold text-[#000000] bg-white border-white " : "text-[#000000]"}`}
             onClick={() => setActiveTab("doctorList")}
           >
             <div className="flex border-[#4EA1E726]">
