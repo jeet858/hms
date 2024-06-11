@@ -35,7 +35,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 <div
                   key={index}
                   //text-[14px]/[16.41px]
-                  className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[5%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
+                  className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[6%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
                 >
                   {header}
                 </div>
@@ -49,7 +49,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 {props.headers.map((header, colIndex) => (
                   <div
                     key={colIndex}
-                    className={`flex border-r border-gray-300 p-[0.5%] text-xs ${colIndex == 0 ? "w-[5%]" : colIndex == 1 ? "w-[20%]" : colIndex == 2 ? "w-[6%]" : colIndex == 3 ? "w-[15%]" : colIndex == 5 ? "w-[12%]" : colIndex == 6 ? "w-[12%]" : "w-[10%]"}`}
+                    className={`flex border-r border-gray-300 p-[0.5%] text-xs ${colIndex == 0 ? "w-[6%]" : colIndex == 1 ? "w-[20%]" : colIndex == 2 ? "w-[6%]" : colIndex == 3 ? "w-[15%]" : colIndex == 5 ? "w-[12%]" : colIndex == 6 ? "w-[12%]" : "w-[10%]"}`}
                   >
                     {item[header]}
                   </div>

@@ -25,7 +25,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
 
   const data = [
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -36,7 +36,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -47,7 +47,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -58,7 +58,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -69,7 +69,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -80,7 +80,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -91,7 +91,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -102,7 +102,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -113,7 +113,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -124,7 +124,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -135,7 +135,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -146,7 +146,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -157,7 +157,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -168,7 +168,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
@@ -179,7 +179,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
       Days: "Mon - Sat",
     },
     {
-      ID: 1,
+      ID: "DOC 101",
       Name: "Dr. M. Kamruzzaman Mazumder",
       Gender: "Male",
       Specialization: "MBBS, MD ( Medicine)",
