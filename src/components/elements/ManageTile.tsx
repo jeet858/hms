@@ -10,7 +10,7 @@ interface ManageDoctorProps {
   accountants: number;
 }
 
-const ManageDoctor: React.FC<ManageDoctorProps> = (props) => {
+const ManageTile: React.FC<ManageDoctorProps> = (props) => {
   return (
     <div className="flex justify-between items-center p-3">
       <h1 className="text-2xl">{props.title}</h1>
@@ -61,4 +61,4 @@ const ManageDoctor: React.FC<ManageDoctorProps> = (props) => {
   );
 };
 
-export default ManageDoctor;
+export default ManageTile;

@@ -4,6 +4,7 @@ import { FaAlignJustify } from "react-icons/fa6";
 import { IoAddOutline } from "react-icons/io5";
 import { MdOutlineAdd } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
+import AddDoctorForm from "../form/AddDoctorForm";
 
 interface Iprops {
   tileone: string;
@@ -229,7 +230,8 @@ const AddDoctor: React.FC<Iprops> = (props) => {
           {activeTab === "addDoctor" && (
             <div>
               {/* Add doctor content goes here */}
-              <p>Add Doctor Content</p>
+              {/* <p>Add Doctor Content</p> */}
+              <AddDoctorForm/>
             </div>
           )}
         </div>

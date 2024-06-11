@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { DashboardTemplate } from "~/components";
-import CustomTable from "~/components/tables/CustomTable";
 import AddDoctor from "~/components/layout/TileLayout";
-import ManageDoctor from "~/components/elements/ManageDoctor";
+import ManageTile from "~/components/elements/ManageTile";
 
 const Doctor: React.FC = (props) => {
   const [page, setPage] = useState<number>(1);
@@ -12,7 +11,7 @@ const Doctor: React.FC = (props) => {
       <div className="h-full w-full p-[1%]">
         <div>
           <div>
-            <ManageDoctor
+            <ManageTile
               title="Manage Doctor"
               doctors={10}
               patients={50}
