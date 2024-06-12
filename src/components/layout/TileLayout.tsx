@@ -22,18 +22,18 @@ const AddDoctor: React.FC<Iprops> = (props) => {
   return (
     <div className="p-4">
       <div className="rounded border-2 border-[#00000040] shadow">
-        <div className=" bg-blue-50 border flex space-x-1">
+        <div className="bg-blue-50 border border-white flex space-x-1">
           <button
-            className={`px-4 py-2 ${activeTab === "doctorList" ? "font-bold text-[#000000] bg-white border-white" : "text-[#000000]"}`}
+            className={`px-4 py-2 ${activeTab === "doctorList" ? "font-bold text-[#000000] bg-white border-white " : "text-[#000000]"}`}
             onClick={() => setActiveTab("doctorList")}
           >
             <div className="flex border-[#4EA1E726]">
-              <FaAlignJustify className={`mt-[5px] text-yellow-500 ${activeTab === "doctorList" ? "font-bold" : "text-[#000000]"}`} />
-              <div className="ml-2 text-lg">{props.tileone}</div>
+              <FaAlignJustify className={`mt-[5px] text-yellow-500 ${activeTab === "doctorList" ? "font-bold" : "text-[#070404]"}`} />
+              <div className="ml-3 text-lg">{props.tileone}</div>
             </div>
           </button>
           <button
-            className={`px-4 py-2 ${activeTab === "addDoctor" ? "font-bold bg-white border-white border-y-0" : "text-gray-500"}`}
+            className={`px-2 py-2 ${activeTab === "addDoctor" ? "font-bold bg-white border-white border-y-0" : "text-gray-500"}`}
             onClick={() => setActiveTab("addDoctor")}
           >
             <div className="flex">
