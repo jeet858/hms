@@ -28,7 +28,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
             onClick={() => setActiveTab("doctorList")}
           >
             <div className="flex border-[#4EA1E726]">
-              <FaAlignJustify className={`mt-[5px] text-yellow-500 ${activeTab === "doctorList" ? "font-bold" : "text-[#050303]"}`} />
+              <FaAlignJustify className={`mt-[5px] text-yellow-500 ${activeTab === "doctorList" ? "font-bold" : "text-[#070404]"}`} />
               <div className="ml-3 text-lg">{props.tileone}</div>
             </div>
           </button>
