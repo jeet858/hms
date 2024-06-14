@@ -4,7 +4,7 @@ import TileLayout from "~/components/layout/TileLayout";
 import ManageTile from "~/components/elements/ManageTile";
 import CustomTable from "../components/tables/CustomTable";
 import AddDoctorForm from "../components/form/AddDoctorForm";
-import NewPatientaAppointmentForm from "~/components/form/NewPatientaAppointmentForm";
+import NewPatientAppointmentForm from "~/components/form/NewPatientAppointmentForm";
 
 const Doctor: React.FC = () => {
   // const [page, setPage] = useState<number>(1);
@@ -299,7 +299,7 @@ const Doctor: React.FC = () => {
                 tileone={"Patient List"}
                 tiletwo={"New Appointment"}
                 children1={<CustomTable headers={headers} data={data} widths={width} />}
-                children2={<NewPatientaAppointmentForm />}
+                children2={<NewPatientAppointmentForm />}
               />
             </div>
           </div>
