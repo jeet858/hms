@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const CustomTable: React.FC<TableProps> = (props) => {
-  const [entriesToShow, setEntriesToShow] = useState<number>(10);
+  const [entriesToShow, setEntriesToShow] = useState<number>(13);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleEntriesChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
