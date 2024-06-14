@@ -20,7 +20,7 @@ const AddDoctor: React.FC<Iprops> = (props) => {
   );
 
   return (
-    <div className="p-4">
+    <div>
       <div className="rounded border-2 border-[#00000040] shadow">
         <div className="bg-blue-50 border border-white flex space-x-1">
           <button
