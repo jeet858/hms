@@ -57,7 +57,7 @@ const AddDoctorForm: React.FC = () => {
             className="hidden"
           />
         </div>
-        <div className="mt-2 h-13 border border-gray-300"></div>
+        <div className=" h-96 w-0.5 border border-gray-300"/>
         {/* Right Section */}
         <div className="ml-5 w-2/3">
           <form className="space-y-2">
@@ -131,7 +131,7 @@ const AddDoctorForm: React.FC = () => {
               <div className="flex flex-wrap">
                 {["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"].map(
                   (day) => (
-                    <label key={day} className="mr-3">
+                    <label key={day} className="mr-2">
                       <input type="checkbox" className="mr-1" />
                       {day}
                     </label>
