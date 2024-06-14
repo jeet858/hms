@@ -24,7 +24,6 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
   return (
     <div>
-
       <div className="w-full overflow-hidden rounded-lg border border-[#003A47] bg-[#F2F2F2] shadow-lg p-1">
         <div className="overflow-x-auto">
           <div className="w-full rounded-lg border border-gray-300 bg-gray-100">
@@ -40,7 +39,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 </div>
               ))}
             </div>
-            {paginatedData.map((item, rowIndex) => (
+            {/* {paginatedData.map((item, rowIndex) => (
               <div
                 key={rowIndex}
                 className="flex w-full border-t border-gray-300"
@@ -56,6 +55,24 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 ))}
               </div>
             ))}
+          </div> */}
+          <div className="h-[350px] overflow-y-auto">
+              {paginatedData.map((item, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="flex w-full border-t border-gray-300"
+                >
+                  {props.headers.map((header, colIndex) => (
+                    <div
+                      key={colIndex}
+                      className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]}`}
+                    >
+                      {item[header]}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="m-2 flex items-center justify-between">
             <div>
