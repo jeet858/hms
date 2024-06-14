@@ -24,9 +24,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
   return (
     <div>
-      {/* <div>
-        <TotalRecords total={props.data.length} />
-      </div> */}
+
       <div className="w-full overflow-hidden rounded-lg border border-[#003A47] bg-[#F2F2F2] shadow-lg p-1">
         <div className="overflow-x-auto">
           <div className="w-full rounded-lg border border-gray-300 bg-gray-100">
@@ -35,7 +33,8 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 <div
                   key={index}
                   //text-[14px]/[16.41px]
-                  className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[6%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
+                  // className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[6%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
+                  className={`flex border-r border-gray-300 p-[0.5%] text-sm ${props.widths[index]} font-bold`}
                 >
                   {header}
                 </div>
@@ -49,7 +48,8 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 {props.headers.map((header, colIndex) => (
                   <div
                     key={colIndex}
-                    className={`flex border-r border-gray-300 p-[0.5%] text-xs ${colIndex == 0 ? "w-[6%]" : colIndex == 1 ? "w-[20%]" : colIndex == 2 ? "w-[6%]" : colIndex == 3 ? "w-[15%]" : colIndex == 5 ? "w-[12%]" : colIndex == 6 ? "w-[12%]" : "w-[10%]"}`}
+                    // className={`flex border-r border-gray-300 p-[0.5%] text-xs ${colIndex == 0 ? "w-[6%]" : colIndex == 1 ? "w-[20%]" : colIndex == 2 ? "w-[6%]" : colIndex == 3 ? "w-[15%]" : colIndex == 5 ? "w-[12%]" : colIndex == 6 ? "w-[12%]" : "w-[10%]"}`}
+                    className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]}`}
                   >
                     {item[header]}
                   </div>
@@ -118,8 +118,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
 interface TableProps {
   headers: string[];
-  // widths: string[];
-  // padding: string[];
+  widths: string[];
   data: Array<{ [key: string]: string | number }>;
 }
 

@@ -187,6 +187,18 @@ const Doctor: React.FC = () => {
     },
   ];
 
+  const width = [
+    "w-[6%]",
+    "w-[20%]",
+    "w-[6%]",
+    "w-[15%]",
+    "w-[10%]",
+    "w-[12%]",
+    "w-[12%]",
+    "w-[10%]",
+    "w-[10%]",
+  ]
+
   return (
     <DashboardTemplate active_tile="Doctors">
       <div className="h-full w-full p-[1%]">
@@ -207,7 +219,7 @@ const Doctor: React.FC = () => {
               <TileLayout
                 tileone={"Doctor List"}
                 tiletwo={"Add Doctor"}
-                children1={<CustomTable headers={headers} data={data} />}
+                children1={<CustomTable headers={headers} data={data} widths={width} />}
                 children2={<AddDoctorForm />}
               />
             </div>
