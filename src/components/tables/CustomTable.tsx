@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const CustomTable: React.FC<TableProps> = (props) => {
-  const [entriesToShow, setEntriesToShow] = useState<number>(10);
+  const [entriesToShow, setEntriesToShow] = useState<number>(13);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleEntriesChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -24,9 +24,6 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
   return (
     <div>
-      {/* <div>
-        <TotalRecords total={props.data.length} />
-      </div> */}
       <div className="w-full overflow-hidden rounded-lg border border-[#003A47] bg-[#F2F2F2] shadow-lg p-1">
         <div className="overflow-x-auto">
           <div className="w-full rounded-lg border border-gray-300 bg-gray-100">
@@ -35,13 +32,14 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 <div
                   key={index}
                   //text-[14px]/[16.41px]
-                  className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[6%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
+                  // className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[6%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
+                  className={`flex border-r border-gray-300 p-[0.5%] text-sm ${props.widths[index]} font-bold`}
                 >
                   {header}
                 </div>
               ))}
             </div>
-            {paginatedData.map((item, rowIndex) => (
+            {/* {paginatedData.map((item, rowIndex) => (
               <div
                 key={rowIndex}
                 className="flex w-full border-t border-gray-300"
@@ -49,13 +47,32 @@ const CustomTable: React.FC<TableProps> = (props) => {
                 {props.headers.map((header, colIndex) => (
                   <div
                     key={colIndex}
-                    className={`flex border-r border-gray-300 p-[0.5%] text-xs ${colIndex == 0 ? "w-[6%]" : colIndex == 1 ? "w-[20%]" : colIndex == 2 ? "w-[6%]" : colIndex == 3 ? "w-[15%]" : colIndex == 5 ? "w-[12%]" : colIndex == 6 ? "w-[12%]" : "w-[10%]"}`}
+                    // className={`flex border-r border-gray-300 p-[0.5%] text-xs ${colIndex == 0 ? "w-[6%]" : colIndex == 1 ? "w-[20%]" : colIndex == 2 ? "w-[6%]" : colIndex == 3 ? "w-[15%]" : colIndex == 5 ? "w-[12%]" : colIndex == 6 ? "w-[12%]" : "w-[10%]"}`}
+                    className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]}`}
                   >
                     {item[header]}
                   </div>
                 ))}
               </div>
             ))}
+          </div> */}
+          <div className="h-[350px] overflow-y-auto">
+              {paginatedData.map((item, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="flex w-full border-t border-gray-300"
+                >
+                  {props.headers.map((header, colIndex) => (
+                    <div
+                      key={colIndex}
+                      className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]}`}
+                    >
+                      {item[header]}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="m-2 flex items-center justify-between">
             <div>
@@ -118,8 +135,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
 interface TableProps {
   headers: string[];
-  // widths: string[];
-  // padding: string[];
+  widths: string[];
   data: Array<{ [key: string]: string | number }>;
 }
 
