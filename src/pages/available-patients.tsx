@@ -1,5 +1,5 @@
 import React from "react";
-import  DashboardTemplate  from "../components/templates/DashboardTemplate"
+import DashboardTemplate from "../components/templates/DashboardTemplate";
 import { FaPlus } from "react-icons/fa6";
 import IndoorPatient from "../components/elements/IndoorPatient";
 
@@ -144,6 +144,7 @@ const AvailablePatients: React.FunctionComponent = () => {
                 name={item.name}
                 illness={item.illness}
                 visit={item.visit}
+                bedNo="2"
               />
             ))}
           </div>

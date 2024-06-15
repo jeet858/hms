@@ -69,7 +69,7 @@ const AvailableDoctorBoxComponent: React.FunctionComponent = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-6">
       {availabledoctorbox.map((doctor, index) => (
         <div
           className="boxsh flex w-full flex-col gap-4 rounded-xl"
@@ -98,7 +98,7 @@ const AvailableDoctorBoxComponent: React.FunctionComponent = () => {
               {doctor.name}
             </span>
             <div className="flex flex-row items-center justify-between">
-              <span className="flex flex-col  text-lg font-semibold text-[#FFB800]">
+              <span className="flex flex-col  text-base font-semibold text-[#FFB800]">
                 <span>{doctor.specialities}</span>
                 <span className="text-sm">{doctor.degree}</span>
               </span>

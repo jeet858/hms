@@ -4,6 +4,7 @@ interface IndoorPatientProps {
   name: string;
   illness: string;
   visit: number;
+  bedNo: string;
 }
 
 const IndoorPatient: React.FC<IndoorPatientProps> = (props) => {
