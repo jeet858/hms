@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+.required label:after {
+  color: #e32;
+  content: ' *';
+  display:inline;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: white;
+  border: transparent;
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('../font/Sansation_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Lato';
+  src: url('../font/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main-bg {
   background-image: url("../../images/dashboard.png");
   background-size: cover; /* Cover the entire area */
