@@ -14,44 +14,51 @@ interface Iprops {
 }
 
 const AddDoctor: React.FC<Iprops> = (props) => {
-
   const [activeTab, setActiveTab] = useState<"doctorList" | "addDoctor">(
     "doctorList",
   );
 
   return (
-    <div>
-      <div className="rounded border-2 border-[#00000040] shadow">
-        <div className="bg-blue-50 border border-white flex space-x-1">
+    <div className="h-full w-full">
+      <div className="flex h-full w-full flex-col rounded shadow">
+        <div className="flex space-x-1 border border-white bg-blue-50">
           <button
-            className={`px-4 py-2 ${activeTab === "doctorList" ? "font-bold text-[#000000] bg-white border-white " : "text-[#000000]"}`}
+            className={`px-4 py-2 ${activeTab === "doctorList" ? "border-white bg-white font-bold text-[#000000] " : "text-[#000000]"}`}
             onClick={() => setActiveTab("doctorList")}
           >
             <div className="flex border-[#4EA1E726]">
-              <FaAlignJustify className={`mt-[5px] text-yellow-500 ${activeTab === "doctorList" ? "font-bold" : "text-[#070404]"}`} />
+              <FaAlignJustify
+                className={`mt-[5px] text-yellow-500 ${activeTab === "doctorList" ? "font-bold" : "text-[#070404]"}`}
+              />
               <div className="ml-3 text-lg">{props.tileone}</div>
             </div>
           </button>
           <button
-            className={`px-2 py-2 ${activeTab === "addDoctor" ? "font-bold bg-white border-white border-y-0" : "text-gray-500"}`}
+            className={`px-2 py-2 ${activeTab === "addDoctor" ? "border-y-0 border-white bg-white font-bold" : "text-gray-500"}`}
             onClick={() => setActiveTab("addDoctor")}
           >
             <div className="flex">
-              <MdOutlineAdd className={`text-[25px] ${activeTab === "addDoctor" ? "font-bold text-yellow-500" : "text-gray-500"}`} />
-              <div className={`ml-2 text-lg ${activeTab === "addDoctor" ? "font-bold text-[#287CC6]" : "text-gray-500"}`}>{props.tiletwo}</div>
+              <MdOutlineAdd
+                className={`text-[25px] ${activeTab === "addDoctor" ? "font-bold text-yellow-500" : "text-gray-500"}`}
+              />
+              <div
+                className={`ml-2 text-lg ${activeTab === "addDoctor" ? "font-bold text-[#287CC6]" : "text-gray-500"}`}
+              >
+                {props.tiletwo}
+              </div>
             </div>
           </button>
         </div>
-        <div className="p-4">
+        <div className="h-[90%] p-4">
           {activeTab === "doctorList" && (
-            <div>
+            <div className="">
               {/* Doctor list content goes here */}
               {/* <p>Doctor List Content</p> */}
               {props.children1}
             </div>
           )}
           {activeTab === "addDoctor" && (
-            <div>
+            <div className="h-full w-full">
               {/* Add doctor content goes here */}
               {/* <p>Add Doctor Content</p> */}
               {props.children2}
