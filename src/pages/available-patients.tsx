@@ -1,7 +1,8 @@
 import React from "react";
-import  DashboardTemplate  from "../components/templates/DashboardTemplate"
+import DashboardTemplate from "../components/templates/DashboardTemplate";
 import { FaPlus } from "react-icons/fa6";
 import IndoorPatient from "../components/elements/IndoorPatient";
+import { IndoorPatientTemplate } from "~/components";
 
 const AvailablePatients: React.FunctionComponent = () => {
   const data = [
@@ -122,7 +123,7 @@ const AvailablePatients: React.FunctionComponent = () => {
   ];
   return (
     <div>
-      <DashboardTemplate active_tile="In Door Patient">
+      <IndoorPatientTemplate active_tile="Available Patients">
         <div className="flex h-full w-full flex-col items-center">
           <div className="flex h-[10%] w-full flex-row items-end justify-between pr-[2rem]">
             <h3 className="text-[24px] text-[#00738C]">
@@ -144,11 +145,12 @@ const AvailablePatients: React.FunctionComponent = () => {
                 name={item.name}
                 illness={item.illness}
                 visit={item.visit}
+                bedNo="2"
               />
             ))}
           </div>
         </div>
-      </DashboardTemplate>
+      </IndoorPatientTemplate>
     </div>
   );
 };

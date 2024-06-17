@@ -12,19 +12,23 @@ import {
   FaUser,
   FaUserAlt,
 } from "react-icons/fa";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { signOut } from "next-auth/react";
 interface MainPageTemplateProps {
   children?: JSX.Element | JSX.Element[];
   active_tile:
     | "Home"
-    | "Doctors"
-    | "Nurses"
-    | "In Door Patient"
-    | "Out Door Patient";
+    | "Available Patients"
+    | "Available Doctors"
+    | "Doctor List"
+    | "Add Patient";
 }
-const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
+const IndoorPatientTemplate: React.FC<MainPageTemplateProps> = (props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [inputField, setInputField] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -53,36 +57,50 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
       <div className="flex h-full w-1/5 flex-col">
         <Image src={logo} alt="" className="h-[7.5%] w-4/5 self-center" />
         <div className="mt-8 flex h-fit w-full flex-col gap-y-4 self-center">
-          <NavigationTile
-            active={props.active_tile === "Home"}
-            tile_text="Home"
-            href=""
-          />
-          <NavigationTile
-            active={props.active_tile === "Doctors"}
-            tile_text="Doctors"
-            href=""
-          />
-          <NavigationTile
-            active={props.active_tile === "Nurses"}
-            tile_text="Nurses"
-            href=""
-          />
-          <NavigationTile
-            active={props.active_tile === "In Door Patient"}
-            tile_text="In Door Patient"
-            href="/indoor-patients"
-          />
-          <NavigationTile
-            active={props.active_tile === "Out Door Patient"}
-            tile_text="Out Door Patient"
-            href=""
-          />
+          <div
+            className="relative flex w-full min-w-full items-center "
+            onClick={() => {
+              setExpanded(!expanded);
+            }}
+          >
+            <NavigationTile
+              active={props.active_tile === "Home"}
+              tile_text="Home"
+              href=""
+            />
+            <div className="absolute z-10 flex w-4/5 cursor-pointer items-end justify-end">
+              <MdOutlineKeyboardArrowDown className="mr-5 h-8 w-8  text-yellow-500" />
+            </div>
+          </div>
+          {expanded ? (
+            <div ref={ref} className="flex  flex-col gap-y-4">
+              <NavigationTile
+                active={props.active_tile === "Available Patients"}
+                tile_text="Available Patients"
+                href="available-patients"
+              />
+              <NavigationTile
+                active={props.active_tile === "Available Doctors"}
+                tile_text="Available Doctors"
+                href="available-doctor"
+              />
+              <NavigationTile
+                active={props.active_tile === "Doctor List"}
+                tile_text="Doctor List"
+                href=""
+              />
+              <NavigationTile
+                active={props.active_tile === "Add Patient"}
+                tile_text="Add Patient"
+                href=""
+              />
+            </div>
+          ) : null}
         </div>
       </div>
       <div className="flex h-full w-4/5 flex-col">
         <div className="flex h-[5%] w-[95%] items-center justify-between self-center">
-          <p className="text-4xl font-light text-white">Dashboard</p>
+          <p className="text-4xl font-light text-white">In Door Patient</p>
           <div
             ref={containerRef}
             className="flex w-2/5 flex-row items-center justify-center text-white"
@@ -110,7 +128,14 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
               <Image src={bell_icon} alt="" className="h-8 w-8" />
             </div>
             <div>
-              <Image src={power_icon} alt="" className="h-8 w-8" />
+              <Image
+                src={power_icon}
+                alt=""
+                className="h-8 w-8"
+                onClick={async () => {
+                  await signOut();
+                }}
+              />
             </div>
           </div>
         </div>
@@ -134,4 +159,4 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
   );
 };
 
-export default DashboardTemplate;
+export default IndoorPatientTemplate;
