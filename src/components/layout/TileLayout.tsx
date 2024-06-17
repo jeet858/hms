@@ -20,8 +20,8 @@ const AddDoctor: React.FC<Iprops> = (props) => {
   );
 
   return (
-    <div>
-      <div className="rounded border-2 border-[#00000040] shadow">
+    <div className="w-full h-full">
+      <div className="rounded border-2 w-full flex flex-col h-fit border-[#00000040] shadow">
         <div className="bg-blue-50 border border-white flex space-x-1">
           <button
             className={`px-4 py-2 ${activeTab === "doctorList" ? "font-bold text-[#000000] bg-white border-white " : "text-[#000000]"}`}
@@ -42,16 +42,16 @@ const AddDoctor: React.FC<Iprops> = (props) => {
             </div>
           </button>
         </div>
-        <div className="p-4">
+        <div className="p-4 h-[90%]">
           {activeTab === "doctorList" && (
-            <div>
+            <div className="">
               {/* Doctor list content goes here */}
               {/* <p>Doctor List Content</p> */}
               {props.children1}
             </div>
           )}
           {activeTab === "addDoctor" && (
-            <div>
+            <div className="w-full h-full">
               {/* Add doctor content goes here */}
               {/* <p>Add Doctor Content</p> */}
               {props.children2}
