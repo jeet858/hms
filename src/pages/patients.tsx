@@ -1,14 +1,14 @@
-import React from 'react'
-import { DashboardTemplate } from '~/components'
-import ManageTile from '~/components/elements/ManageTile'
-import PatientForm from '~/components/form/PatientForm'
-import TileLayout from '~/components/layout/TileLayout'
+import React from "react";
+import { DashboardTemplate, IndoorPatientTemplate } from "~/components";
+import ManageTile from "~/components/elements/ManageTile";
+import PatientForm from "~/components/form/PatientForm";
+import TileLayout from "~/components/layout/TileLayout";
 
-const Patients:React.FC = () => {
+const Patients: React.FC = () => {
   return (
-    <DashboardTemplate active_tile="Doctors">
+    <IndoorPatientTemplate active_tile="Add Patient">
       <div className="h-full w-full p-[1%]">
-        <div className='h-full w-full'>
+        <div className="h-full w-full">
           <div>
             <ManageTile
               title="Manage Doctor"
@@ -21,7 +21,7 @@ const Patients:React.FC = () => {
             />
           </div>
           <div className="h-[90%] w-full">
-            <div className="w-full h-[90%]">
+            <div className="h-[90%] w-full">
               <TileLayout
                 tileone={"Patient List"}
                 tiletwo={"Add Patient"}
@@ -32,8 +32,8 @@ const Patients:React.FC = () => {
           </div>
         </div>
       </div>
-    </DashboardTemplate>
-  )
-}
+    </IndoorPatientTemplate>
+  );
+};
 
-export default Patients
+export default Patients;

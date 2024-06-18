@@ -18,35 +18,142 @@ const PatientForm: React.FC = () => {
   const renderPatientForm = () => {
     switch (form) {
       case "personalInfo":
-        return <PersonalInfo />;
-        break;
+        return (
+          <PersonalInfo
+            data={personalInfo}
+            setData={setPersonalInfo}
+            saveAndNextClick={() => {
+              setForm("contactInfo");
+            }}
+          />
+        );
       case "contactInfo":
-        return <ContactDetails />;
+        return (
+          <ContactDetails
+            data={contactInfo}
+            setData={setContactInfo}
+            saveAndNextClick={() => {
+              setForm("insurance");
+            }}
+          />
+        );
         break;
       case "insurance":
-        return <Insurance />;
+        return (
+          <Insurance
+            data={insuranceInfo}
+            setData={setInsuranceInfo}
+            saveAndNextClick={() => {
+              setForm("otherInfo");
+            }}
+          />
+        );
         break;
       case "otherInfo":
-        return <OtherInfo />;
+        return (
+          <OtherInfo
+            data={otherInfo}
+            setData={setOtherInfo}
+            saveAndNextClick={() => {
+              setForm("attatchment");
+            }}
+          />
+        );
         break;
       case "attatchment":
-        return <Attatchment />;
+        return (
+          <Attatchment
+            data={attatchment}
+            setData={setAttatchment}
+            saveAndNextClick={() => {}}
+          />
+        );
         break;
       case "admissionDetails":
-        return <AdmissionDetails />;
+        return (
+          <AdmissionDetails
+            data={admissionDetails}
+            setData={setAdmissionDetails}
+            saveAndNextClick={() => {}}
+          />
+        );
         break;
     }
   };
+  const [personalInfo, setPersonalInfo] = useState({
+    firstName: "",
+    lastName: "",
+    fathersName: "",
+    spousesName: "",
+    dateOfBirth: "",
+    birthPlace: "",
+    gender: "",
+    relationshipStatus: "",
+    religion: "",
+    bloodGroup: "",
+  });
+  const [contactInfo, setContactInfo] = useState({
+    address1: "",
+    address2: "",
+    city: "",
+    contactNumber: "",
+    emergencyContact: "",
+    guardianName: "",
+    relation: "",
+    emailAddress: "",
+  });
+  const [insuranceInfo, setInsuranceInfo] = useState({
+    insuranceCompany: "",
+    policyNo: "",
+  });
+  const [attatchment, setAttatchment] = useState<{
+    aadharCard: File | null;
+    panCard: File | null;
+    passport: File | null;
+    visa: File | null;
+    referralLetter: File | null;
+    lastPrescription: File | null;
+  }>({
+    aadharCard: null,
+    panCard: null,
+    passport: null,
+    visa: null,
+    referralLetter: null,
+    lastPrescription: null,
+  });
+  const [admissionDetails, setAdmissionDetails] = useState({
+    admissionID: "",
+    treatmentID: "",
+    medicationID: "",
+    dateOfAdmission: "",
+    dateOfDischarge: "",
+    ward: "",
+    roomNumber: "",
+    bedNumber: "",
+    attendingPhysician: "",
+    admissionType: "",
+    bloodGroup: "",
+  });
+  const [otherInfo, setOtherInfo] = useState({
+    height: "",
+    weight: "",
+    bloodPressure: "",
+    medicalHistory: "",
+    reference: "",
+    allergies: "",
+    primaryPhysician: "",
+    preferredLanguage: "",
+  });
   return (
     <div className="flex min-h-full w-full flex-col border ">
-      <div className="font-sansation flex h-fit flex-row items-center justify-evenly pb-6 pt-4 font-bold">
+      <div className="flex h-fit flex-row items-center justify-evenly pb-6 pt-4 font-sansation font-bold">
         <span
           className="flex h-full cursor-pointer flex-col justify-between"
           onClick={() => setForm("personalInfo")}
         >
           Personal Information{" "}
           <div
-            className={`h-[10%] w-full ${form == "personalInfo" ? "block" : "hidden"} bg-yellow-400`}
+            className={`h-[10%] w-full ${form === "personalInfo" ? "block" : "hidden"} border-b-2 border-yellow-400`}
           ></div>
         </span>
         <span
@@ -55,7 +162,7 @@ const PatientForm: React.FC = () => {
         >
           Contact Information
           <div
-            className={`h-[10%] w-full ${form == "contactInfo" ? "block" : "hidden"} bg-yellow-400`}
+            className={`h-[10%] w-full ${form === "contactInfo" ? "block" : "hidden"} border-b-2 border-yellow-400`}
           ></div>
         </span>
         <span
@@ -64,7 +171,7 @@ const PatientForm: React.FC = () => {
         >
           Insurance
           <div
-            className={`h-[10%] w-full ${form == "insurance" ? "block" : "hidden"} bg-yellow-400`}
+            className={`h-[10%] w-full ${form === "insurance" ? "block" : "hidden"} border-b-2 border-yellow-400`}
           ></div>
         </span>
         <span
@@ -73,7 +180,7 @@ const PatientForm: React.FC = () => {
         >
           Other Information
           <div
-            className={`h-[10%] w-full ${form == "otherInfo" ? "block" : "hidden"} bg-yellow-400`}
+            className={`h-[10%] w-full ${form === "otherInfo" ? "block" : "hidden"} border-b-2 border-yellow-400`}
           ></div>
         </span>
         <span
@@ -82,7 +189,7 @@ const PatientForm: React.FC = () => {
         >
           Attachment
           <div
-            className={`h-[10%] w-full ${form == "attatchment" ? "block" : "hidden"} bg-yellow-400`}
+            className={`h-[10%] w-full ${form === "attatchment" ? "block" : "hidden"} border-b-2 border-yellow-400`}
           ></div>
         </span>
         <span
@@ -91,7 +198,7 @@ const PatientForm: React.FC = () => {
         >
           Admission Details
           <div
-            className={`h-[10%] w-full ${form == "admissionDetails" ? "block" : "hidden"} bg-yellow-400`}
+            className={`h-[10%] w-full ${form === "admissionDetails" ? "block" : "hidden"} border-b-2 border-yellow-400`}
           ></div>
         </span>
       </div>
