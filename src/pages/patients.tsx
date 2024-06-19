@@ -1,5 +1,6 @@
 import React from "react";
-import { DashboardTemplate } from "~/components";
+
+import { IndoorPatientTemplate } from "~/components";
 import ManageTile from "~/components/elements/ManageTile";
 import PatientForm from "~/components/form/PatientForm";
 import TileLayout from "~/components/layout/TileLayout";
@@ -176,8 +177,16 @@ const Patients: React.FC = () => {
     "w-[10%]",
   ]
 
+
+import { DashboardTemplate, IndoorPatientTemplate } from "~/components";
+import ManageTile from "~/components/elements/ManageTile";
+import PatientForm from "~/components/form/PatientForm";
+import TileLayout from "~/components/layout/TileLayout";
+
+const Patients: React.FC = () => {
+
   return (
-    <DashboardTemplate active_tile="Doctors">
+    <IndoorPatientTemplate active_tile="Add Patient">
       <div className="h-full w-full p-[1%]">
         <div className="h-full w-full">
           <div>
@@ -203,7 +212,9 @@ const Patients: React.FC = () => {
           </div>
         </div>
       </div>
-    </DashboardTemplate>
+
+    </IndoorPatientTemplate>
+
   );
 };
 
