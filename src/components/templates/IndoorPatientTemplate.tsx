@@ -66,7 +66,7 @@ const IndoorPatientTemplate: React.FC<MainPageTemplateProps> = (props) => {
             <NavigationTile
               active={props.active_tile === "Home"}
               tile_text="Home"
-              href=""
+              href="/"
             />
             <div className="absolute z-10 flex w-4/5 cursor-pointer items-end justify-end">
               <MdOutlineKeyboardArrowDown className="mr-5 h-8 w-8  text-yellow-500" />
@@ -87,7 +87,7 @@ const IndoorPatientTemplate: React.FC<MainPageTemplateProps> = (props) => {
               <NavigationTile
                 active={props.active_tile === "Doctor List"}
                 tile_text="Doctor List"
-                href=""
+                href="doctor"
               />
               <NavigationTile
                 active={props.active_tile === "Add Patient"}
