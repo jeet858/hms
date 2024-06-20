@@ -1,12 +1,22 @@
-import React from "react";
-
-import { IndoorPatientTemplate } from "~/components";
+import { useRouter } from "next/router";
+import { DashboardTemplate, IndoorPatientTemplate } from "~/components";
 import ManageTile from "~/components/elements/ManageTile";
 import PatientForm from "~/components/form/PatientForm";
 import TileLayout from "~/components/layout/TileLayout";
 import CustomTable from "~/components/tables/CustomTable";
 
 const Patients: React.FC = () => {
+  const width = [
+    "w-[7%]",
+    "w-[15%]",
+    "w-[7%]",
+    "w-[15%]",
+    "w-[10%]",
+    "w-[15%]",
+    "w-[12%]",
+    "w-[10%]",
+    "w-[10%]",
+  ];
   const headers = [
     "ID",
     "Name",
@@ -18,7 +28,6 @@ const Patients: React.FC = () => {
     "BirthDate",
     "BedNo",
   ];
-
   const data = [
     {
       ID: "PT 101",
@@ -164,29 +173,10 @@ const Patients: React.FC = () => {
       BedNo: "10101",
     },
   ];
-
-  const width = [
-    "w-[7%]",
-    "w-[15%]",
-    "w-[7%]",
-    "w-[15%]",
-    "w-[10%]",
-    "w-[15%]",
-    "w-[12%]",
-    "w-[10%]",
-    "w-[10%]",
-  ]
-
-
-import { DashboardTemplate, IndoorPatientTemplate } from "~/components";
-import ManageTile from "~/components/elements/ManageTile";
-import PatientForm from "~/components/form/PatientForm";
-import TileLayout from "~/components/layout/TileLayout";
-
-const Patients: React.FC = () => {
-
+  const router = useRouter();
+  const { active_page } = router.query;
   return (
-    <IndoorPatientTemplate active_tile="Add Patient">
+    <DashboardTemplate active_tile="Patients">
       <div className="h-full w-full p-[1%]">
         <div className="h-full w-full">
           <div>
@@ -205,16 +195,17 @@ const Patients: React.FC = () => {
               <TileLayout
                 tileone={"Patient List"}
                 tiletwo={"Add Patient"}
-                children1={<CustomTable headers={headers} widths={width} data={data} />}
+                activeTabProps={active_page === "Table" ? "tabOne" : "tabTwo"}
+                children1={
+                  <CustomTable headers={headers} widths={width} data={data} />
+                }
                 children2={<PatientForm />}
               />
             </div>
           </div>
         </div>
       </div>
-
-    </IndoorPatientTemplate>
-
+    </DashboardTemplate>
   );
 };
 
