@@ -1,10 +1,10 @@
 import React from "react";
-import { DashboardTemplate } from "~/components";
+import { DashboardTemplate, IndoorPatientTemplate } from "~/components";
 import AvailableDoctorBoxComponent from "~/components/elements/AvailableDoctorBoxComponent";
 
 const availabledoctor: React.FunctionComponent = () => {
   return (
-    <DashboardTemplate active_tile="Doctors">
+    <IndoorPatientTemplate active_tile="Available Doctors">
       <div className="flex w-full flex-col gap-4 p-4">
         <div className="flex w-full items-center justify-between">
           <span className="text-2xl font-semibold text-[#00738C]">
@@ -18,7 +18,7 @@ const availabledoctor: React.FunctionComponent = () => {
           <AvailableDoctorBoxComponent />
         </div>
       </div>
-    </DashboardTemplate>
+    </IndoorPatientTemplate>
   );
 };
 
