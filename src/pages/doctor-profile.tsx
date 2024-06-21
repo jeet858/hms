@@ -1,6 +1,6 @@
 import React from "react";
 import { DashboardTemplate } from "~/components";
-import DoctorProfileComponent from "~/components/doctor/DoctorProfileComponent";
+import DoctorProfileComponent from "~/components/elements/DoctorProfileComponent";
 
 const doctorprofile: React.FunctionComponent = () => {
   return (

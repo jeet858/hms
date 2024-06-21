@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+.required label:after {
+  color: #e32;
+  content: ' *';
+  display:inline;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: white;
+  border: transparent;
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('../font/Sansation_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Lato';
+  src: url('../font/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .main-bg {
   background-image: url("../../images/dashboard.png");
   background-size: cover; /* Cover the entire area */
@@ -39,4 +64,18 @@
 }
 .boxsh {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
+}
+.collapsible {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+.open-div {
+  animation: open 0.5s ease-out forwards;
+}
+
+.close-div {
+  animation: close 0.5s ease-out forwards;
+}
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease-out;
 }
