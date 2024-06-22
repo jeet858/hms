@@ -31,7 +31,7 @@ const AddRoomForm = () => {
               <option value="deluxe">Deluxe Room</option>
               <option value="super-deluxe">Super Deluxe Room</option>
             </select>
-            <FaSortDown className="absolute right-1 top-2" />
+            <FaSortDown className="absolute right-1 top-3" />
           </div>
         </div>
         <div className="flex h-[10%] w-[80%] flex-row items-center">
