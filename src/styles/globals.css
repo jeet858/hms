@@ -11,6 +11,7 @@
 input[type="file"]::file-selector-button {
   background-color: white;
   border: transparent;
+  cursor: pointer;
 }
 
 @font-face {
@@ -23,6 +24,12 @@ input[type="file"]::file-selector-button {
 @font-face{
   font-family: 'Lato';
   src: url('../font/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Inter';
+  src: url('../font/Inter-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }

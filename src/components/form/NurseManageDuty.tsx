@@ -10,7 +10,7 @@ interface FormValues {
   bedNo: string;
 }
 
-const Nurse_Manage_Duty: React.FunctionComponent = () => {
+const NurseManageDuty: React.FunctionComponent = () => {
   const [formValues, setFormValues] = useState<FormValues>({
     date: "",
     shift: "",
@@ -69,9 +69,9 @@ const Nurse_Manage_Duty: React.FunctionComponent = () => {
 
   return (
     <div>
-      <div className="m-[1rem] h-[37rem] w-[83rem] border-[.1rem] border-[#dedede]">
+      <div className=" border-[.1rem] border-[#dedede]">
         <form
-          className="flex h-full w-full flex-col space-y-[1.5rem] p-[3rem]"
+          className="flex h-full w-full flex-col font-lato font-normal text-[20px]/[24px] space-y-[1.5rem] p-[3rem]"
           onSubmit={handleSubmit}
         >
           {/* Date Input  */}
@@ -112,7 +112,7 @@ const Nurse_Manage_Duty: React.FunctionComponent = () => {
               name="shift"
               className={`${
                 errors.shift ? "border-red-500" : "border-gray-300"
-              } h-full w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none`}
+              }  w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none`}
               value={formValues.shift}
               onChange={handleChange}
               required
@@ -136,7 +136,7 @@ const Nurse_Manage_Duty: React.FunctionComponent = () => {
               name="ward"
               className={`${
                 errors.ward ? "border-red-500" : "border-gray-300"
-              } h-full w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none`}
+              }  w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none`}
               value={formValues.ward}
               onChange={handleChange}
               required
@@ -160,7 +160,7 @@ const Nurse_Manage_Duty: React.FunctionComponent = () => {
               name="department"
               className={`${
                 errors.department ? "border-red-500" : "border-gray-300"
-              } h-full w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none`}
+              }  w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none`}
               value={formValues.department}
               onChange={handleChange}
               required
@@ -182,7 +182,7 @@ const Nurse_Manage_Duty: React.FunctionComponent = () => {
               type="text"
               id="bedNo"
               name="bedNo"
-              className="h-full w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none"
+              className=" w-[50%] border-[.1rem] border-[#dedede] px-[1rem] text-[14px] focus:outline-none"
               value={formValues.bedNo}
               onChange={handleChange}
             />
@@ -212,4 +212,4 @@ const Nurse_Manage_Duty: React.FunctionComponent = () => {
   );
 };
 
-export default Nurse_Manage_Duty;
+export default NurseManageDuty;

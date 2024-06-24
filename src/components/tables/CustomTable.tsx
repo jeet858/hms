@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const CustomTable: React.FC<TableProps> = (props) => {
-  const [entriesToShow, setEntriesToShow] = useState<number>(13);
+  const [entriesToShow, setEntriesToShow] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleEntriesChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -24,7 +24,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
 
   return (
     <div>
-      <div className="w-full overflow-hidden rounded-lg border border-[#003A47] bg-[#F2F2F2] shadow-lg p-1">
+      <div className="w-full overflow-hidden rounded-lg border border-[#003A47] bg-[#F2F2F2] p-1 shadow-lg">
         <div className="overflow-x-auto">
           <div className="w-full rounded-lg border border-gray-300 bg-gray-100">
             <div className="flex w-full rounded-t-lg bg-gray-200">
@@ -56,7 +56,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
               </div>
             ))}
           </div> */}
-          <div className="h-[350px] overflow-y-auto">
+            <div className="h-[350px] overflow-y-auto">
               {paginatedData.map((item, rowIndex) => (
                 <div
                   key={rowIndex}

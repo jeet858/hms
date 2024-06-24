@@ -1,27 +1,26 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-interface PersonalInfoData {
-  firstName: string;
-  lastName: string;
-  fathersName: string;
-  spousesName: string;
-  dateOfBirth: string;
-  birthPlace: string;
-  gender: string;
-  relationshipStatus: string;
-  religion: string;
-  bloodGroup: string;
+import React,{Dispatch,SetStateAction,useState} from 'react'
+
+interface NursePersonalInfoData {
+  nursefirstName: string;
+  nurselastName: string;
+  nursefathersName: string;
+  nursespousesName: string;
+  nursedateOfBirth: string;
+  nursebirthPlace: string;
+  nursegender: string;
+  nurserelationshipStatus: string;
+  nursereligion: string;
+  nursebloodGroup: string;
 }
 
 interface Iprops {
-  data: PersonalInfoData;
-  setData: Dispatch<SetStateAction<PersonalInfoData>>;
+  data: NursePersonalInfoData;
+  setData: Dispatch<SetStateAction<NursePersonalInfoData>>;
   saveAndNextClick: () => void;
 }
-const PersonalInfo: React.FC<Iprops> = ({
-  data,
-  setData,
-  saveAndNextClick,
-}) => {
+
+const NursePersonalInfo:React.FC<Iprops> = ({data,setData,saveAndNextClick,}) => {
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
@@ -32,6 +31,10 @@ const PersonalInfo: React.FC<Iprops> = ({
     saveAndNextClick();
     console.log(data);
   };
+
+  
+
+
   return (
     <form className="space-y-[0.7%] px-4 pb-2 font-lato text-[20px]/[24px] font-normal">
       <div className="flex w-[60%] flex-row justify-between">
@@ -49,7 +52,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           className=" block  h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
           name="firstName"
-          value={data.firstName}
+          value={data.nursefirstName}
           onChange={handleChange}
         />
       </div>
@@ -60,7 +63,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           className=" block  h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
           name="lastName"
-          value={data.lastName}
+          value={data.nurselastName}
           onChange={handleChange}
         />
       </div>
@@ -70,7 +73,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           type="text"
           className="  block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           name="fathersName"
-          value={data.fathersName}
+          value={data.nursefathersName}
           onChange={handleChange}
         />
       </div>
@@ -80,7 +83,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           type="text"
           className="  block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           name="spousesName"
-          value={data.spousesName}
+          value={data.nursespousesName}
           onChange={handleChange}
         />
       </div>
@@ -91,7 +94,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
           name="dateOfBirth"
-          value={data.dateOfBirth}
+          value={data.nursedateOfBirth}
           onChange={handleChange}
         />
       </div>
@@ -101,7 +104,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           type="text"
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           name="birthPlace"
-          value={data.birthPlace}
+          value={data.nursebirthPlace}
           onChange={handleChange}
         />
       </div>
@@ -111,7 +114,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 text-[12px]/[14.4px] text-[#958E8E]"
           required
           name="gender"
-          value={data.gender}
+          value={data.nursegender}
           onChange={handleChange}
         >
           <option value="">Select gender</option>
@@ -126,7 +129,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           type="text"
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           name="relationshipStatus"
-          value={data.relationshipStatus}
+          value={data.nurserelationshipStatus}
           onChange={handleChange}
         />
       </div>
@@ -136,7 +139,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           type="text"
           className=" block  h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           name="religion"
-          value={data.religion}
+          value={data.nursereligion}
           onChange={handleChange}
         />
       </div>
@@ -146,7 +149,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 text-[12px]/[14.4px] text-[#958E8E]"
           required
           name="bloodGroup"
-          value={data.bloodGroup}
+          value={data.nursebloodGroup}
           onChange={handleChange}
         >
           <option value="">Select blood group</option>
@@ -176,7 +179,7 @@ const PersonalInfo: React.FC<Iprops> = ({
         </button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default PersonalInfo;
+export default NursePersonalInfo

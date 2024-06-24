@@ -10,11 +10,18 @@ interface Iprops {
   tiletwo: string;
   children1: JSX.Element | JSX.Element[];
   children2: JSX.Element | JSX.Element[];
+  activeTabProps?: "tabOne" | "tabTwo";
 }
 
-const tabTwo: React.FC<Iprops> = (props) => {
+const tabTwo: React.FC<Iprops> = ({
+  tileone,
+  tiletwo,
+  children1,
+  children2,
+  activeTabProps = "tabOne",
+}) => {
   const [activeTab, setActiveTab] = useState<"tabOne" | "tabTwo">(
-    "tabOne",
+    activeTabProps,
   );
 
   return (
@@ -29,7 +36,7 @@ const tabTwo: React.FC<Iprops> = (props) => {
               <FaAlignJustify
                 className={`mt-[5px] text-yellow-500 ${activeTab === "tabOne" ? "font-bold" : "text-[#070404]"}`}
               />
-              <div className="ml-3 text-lg">{props.tileone}</div>
+              <div className="ml-3 text-lg">{tileone}</div>
             </div>
           </button>
           <button
@@ -43,7 +50,7 @@ const tabTwo: React.FC<Iprops> = (props) => {
               <div
                 className={`ml-2 text-lg ${activeTab === "tabTwo" ? "font-bold text-[#287CC6]" : "text-gray-500"}`}
               >
-                {props.tiletwo}
+                {tiletwo}
               </div>
             </div>
           </button>
@@ -53,14 +60,14 @@ const tabTwo: React.FC<Iprops> = (props) => {
             <div className="">
               {/* Doctor list content goes here */}
               {/* <p>Doctor List Content</p> */}
-              {props.children1}
+              {children1}
             </div>
           )}
           {activeTab === "tabTwo" && (
             <div className="h-full w-full">
               {/* Add doctor content goes here */}
               {/* <p>Add Doctor Content</p> */}
-              {props.children2}
+              {children2}
             </div>
           )}
         </div>
