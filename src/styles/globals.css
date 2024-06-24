@@ -27,6 +27,12 @@ input[type="file"]::file-selector-button {
   font-weight: normal;
   font-style: normal;
 }
+@font-face{
+  font-family: 'Inter';
+  src: url('../font/Inter-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .main-bg {
   background-image: url("../../images/dashboard.png");
