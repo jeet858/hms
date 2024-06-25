@@ -9,28 +9,28 @@ const AdmissionData: React.FC = () => {
         
         <div className="flex h-[18%] w-full flex-row justify-between">
           <div className="flex h-full w-[16%] text-balance flex-col space-y-3">
-            <span className="">Insurance Provider</span>
+            <span className="text-[#2E2E2E]">Insurance Provider</span>
             <span className="text-[#003A47]">National Insurance Pvt. Ltd.</span>
           </div>
           <div className="flex h-full w-[16%] break-words flex-col space-y-3">
-            <span className="">Policy No.</span>
+            <span className="text-[#2E2E2E]">Policy No.</span>
             <span className="text-[#003A47]">NIC000123456789</span>
           </div>
           <div className="flex h-full w-[16%] text-balance flex-col space-y-3">
-            <span className="">Blood Pressure</span>
+            <span className="text-[#2E2E2E]">Blood Pressure</span>
             <span className="text-[#003A47]">140/85</span>
           </div>
           <div className="flex h-full w-[16%] text-balance flex-col space-y-3">
-            <span className="">Referance</span>
+            <span className="text-[#2E2E2E]">Referance</span>
             <span className="text-[#003A47]">behala Rural Hosp.</span>
           </div>
           <div className="flex h-full w-[16%] text-balance flex-col space-y-3">
-            <span className="">Primary Physicial</span>
+            <span className="text-[#2E2E2E]">Primary Physicial</span>
             <span className="text-[#003A47]">Dr. A Sanyal</span>
           </div>
         </div>
         <div className="flex h-[22%] w-full flex-col space-y-3">
-          <span className="">Medical History</span>
+          <span className="text-[#2E2E2E]">Medical History</span>
           <div className="w-full pr-[2rem] text-[#003A47]">
             The patient reported using oral antibiotics and mucolytics with no
             significant relief. He reported having used illicit drugs
@@ -40,26 +40,26 @@ const AdmissionData: React.FC = () => {
         </div>
         <div className="flex h-[16%] w-full flex-row justify-between">
           <div className="flex h-full text-wrap flex-col space-y-3">
-            <span className="">Admission ID</span>
+            <span className="text-[#2E2E2E]">Admission ID</span>
             <span className="text-[#003A47]">ADI23456</span>
           </div>
           <div className="flex h-full text-wrap flex-col space-y-3">
-            <span className="">Treatment ID</span>
+            <span className="text-[#2E2E2E]">Treatment ID</span>
             <span className="text-[#003A47]">TDI23456</span>
           </div>
           <div className="flex h-full text-wrap flex-col space-y-3">
-            <span className="">Medication ID</span>
+            <span className="text-[#2E2E2E]">Medication ID</span>
             <span className="text-[#003A47]">MDI223456</span>
           </div>
           <div className="flex h-full text-wrap flex-col space-y-3">
-            <span className="">Date of admission</span>
+            <span className="text-[#2E2E2E]">Date of admission</span>
             <span className="flex flex-row justify-between text-[#003A47]">
               <span>24-06-2024</span>
               <FaPencil />
             </span>
           </div>
           <div className="flex h-full w-[16%] flex-col  space-y-3">
-            <span className="">Date of discharge</span>
+            <span className="text-[#2E2E2E]">Date of discharge</span>
             <span className="flex flex-row justify-between space-x- text-[#003A47]">
               <span>-</span>
               <FaPencil />
@@ -68,11 +68,11 @@ const AdmissionData: React.FC = () => {
         </div>
         <div className="flex h-[18%] w-full flex-row justify-between">
           <div className="flex h-full flex-col space-y-3">
-            <span className="">Ward</span>
+            <span className="text-[#2E2E2E]">Ward</span>
             <span className="text-[#003A47]">General Ward</span>
           </div>
           <div className="flex h-full flex-col space-y-3">
-            <span className="">Room No.</span>
+            <span className="text-[#2E2E2E]">Room No.</span>
             <span className="text-[#003A47]">101</span>
           </div>
           <div className="flex h-full flex-col space-y-3">
@@ -80,7 +80,7 @@ const AdmissionData: React.FC = () => {
             <span className="text-[#003A47]">Dr. AKM. Sejedur Rahman</span>
           </div>
           <div className="flex h-full flex-col space-y-3">
-            <span className="">Admission Type</span>
+            <span className="text-[#2E2E2E]">Admission Type</span>
             <span className="text-[#003A47]">Referrall</span>
           </div>
         </div>
