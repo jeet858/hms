@@ -1,20 +1,7 @@
-// import React from 'react'
-
-// const DiagonosisDetails:React.FC = () => {
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
-
-// export default DiagonosisDetails
-
-
 import React, { useState } from 'react';
 import TableWithAddButton from '~/components/tables/TableWithAddButton';
 
-const App: React.FC = () => {
+const DiagnosisDetails: React.FC = () => {
   const [rows, setRows] = useState([
     { id: 'DOC 101', doctorName: 'Dr. M. Kamruzzaman Mazumder', date: '21-06-2024', time: '08:35', prescription: 'PDF' },
     { id: 'DOC 102', doctorName: 'Pr. Dr. Md. Abdus Sobur', date: '21-06-2024', time: '16:40', prescription: 'PDF' },
@@ -42,4 +29,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default DiagnosisDetails;

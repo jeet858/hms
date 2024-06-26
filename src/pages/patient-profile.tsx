@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DashboardTemplate } from "~/components";
 import AdmissionData from "~/components/elements/patient details/AdmissionData";
-import DiagonosisDetails from "~/components/elements/patient details/DiagonosisDetails";
+import DiagnosisDetails from "~/components/elements/patient details/DiagnosisDetails";
 import GeneralDetails from "~/components/elements/patient details/GeneralDetails";
 
 const PatientProfile: React.FC = () => {
@@ -15,7 +15,7 @@ const PatientProfile: React.FC = () => {
         return <GeneralDetails />;
         break;
       case "diagonosis":
-        return <DiagonosisDetails />;
+        return <DiagnosisDetails />;
         break;
       case "admissiondetails":
         return <AdmissionData />;
