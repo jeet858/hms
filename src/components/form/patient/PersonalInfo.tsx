@@ -39,7 +39,6 @@ const PersonalInfo: React.FC<Iprops> = ({
         <input
           type="text"
           className=" block  h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="required flex w-[60%] flex-row justify-between">
@@ -105,7 +104,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           onChange={handleChange}
         />
       </div>
-      <div className="flex w-[60%] flex-row justify-between">
+      <div className=" required flex w-[60%] flex-row justify-between">
         <label className="block text-gray-700">Gender</label>
         <select
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 text-[12px]/[14.4px] text-[#958E8E]"
@@ -122,13 +121,18 @@ const PersonalInfo: React.FC<Iprops> = ({
       </div>
       <div className="flex w-[60%] flex-row justify-between">
         <label className="block text-gray-700">Relationship Status</label>
-        <input
-          type="text"
-          className=" block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
+        <select
+          className=" block h-7 w-[65%] rounded-sm border border-gray-300 text-[12px]/[14.4px] text-[#958E8E]"
+          required
           name="relationshipStatus"
-          value={data.relationshipStatus}
+          value={data.gender}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select Relationship Status</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="other">Other</option>
+        </select>
       </div>
       <div className="flex w-[60%] flex-row justify-between">
         <label className="block text-gray-700">Religion</label>
@@ -140,7 +144,7 @@ const PersonalInfo: React.FC<Iprops> = ({
           onChange={handleChange}
         />
       </div>
-      <div className="required flex w-[60%] flex-row justify-between">
+      <div className=" flex w-[60%] flex-row justify-between">
         <label className="block text-gray-700">Blood Group</label>
         <select
           className=" block h-7 w-[65%] rounded-sm border border-gray-300 text-[12px]/[14.4px] text-[#958E8E]"

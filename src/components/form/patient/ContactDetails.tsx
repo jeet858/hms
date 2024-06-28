@@ -6,7 +6,7 @@ interface ContactDetailsData {
   city: string;
   contactNumber: string;
   emergencyContact: string;
-  guardianName: string;
+  emergencyContactName: string;
   relation: string;
   emailAddress: string;
 }
@@ -50,7 +50,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
           required
         />
       </div>
-      <div className="required flex w-[60%] flex-row justify-between">
+      <div className=" flex w-[60%] flex-row justify-between">
         <label className="block text-gray-700">Address 2</label>
         <input
           type="text"
@@ -94,11 +94,11 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
-        <label className="block text-gray-700">Guardian’s Name</label>
+        <label className="block text-gray-700">Emergency Contact’s Name</label>
         <input
           type="text"
-          name="guardianName"
-          value={data.guardianName}
+          name="emergencyContactName"
+          value={data.emergencyContactName}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required

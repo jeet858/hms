@@ -21,7 +21,6 @@ const CustomTable: React.FC<TableProps> = (props) => {
   const startIndex = (currentPage - 1) * entriesToShow;
   const endIndex = startIndex + entriesToShow;
   const paginatedData = props.data.slice(startIndex, endIndex);
-
   return (
     <div>
       <div className="w-full overflow-hidden rounded-lg border border-[#003A47] bg-[#F2F2F2] p-1 shadow-lg">
@@ -33,9 +32,9 @@ const CustomTable: React.FC<TableProps> = (props) => {
                   key={index}
                   //text-[14px]/[16.41px]
                   // className={`flex  border-r border-gray-300 p-[0.5%] text-sm ${index == 0 ? "w-[6%]" : index == 1 ? "w-[20%]" : index == 2 ? " center w-[6%]" : index == 3 ? "w-[15%]" : index == 5 ? "w-[12%]" : index == 6 ? "w-[12%]" : "w-[10%]"} font-bold`}
-                  className={`flex border-r border-gray-300 p-[0.5%] text-sm ${props.widths[index]} font-bold`}
+                  className={`flex border-r border-gray-300 p-[0.5%] text-sm ${props.widths[index]} break-all font-bold`}
                 >
-                  {header}
+                  {header.charAt(0).toUpperCase() + header.slice(1)}
                 </div>
               ))}
             </div>
@@ -60,14 +59,18 @@ const CustomTable: React.FC<TableProps> = (props) => {
               {paginatedData.map((item, rowIndex) => (
                 <div
                   key={rowIndex}
-                  className="flex w-full border-t border-gray-300"
+                  className="flex w-full border-b border-gray-300"
                 >
                   {props.headers.map((header, colIndex) => (
                     <div
                       key={colIndex}
-                      className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]}`}
+                      className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]} break-all`}
                     >
-                      {item[header]}
+                      {header === "name"
+                        ? `${item["firstName"]} ${item["lastName"]}`
+                        : header === "dob" && item["dob"]
+                          ? `${new Date(item["dob"]).toLocaleDateString()}`
+                          : (item[header] as string)}
                     </div>
                   ))}
                 </div>
@@ -136,7 +139,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
 interface TableProps {
   headers: string[];
   widths: string[];
-  data: Array<{ [key: string]: string | number }>;
+  data: Array<{ [key: string]: string | number | Date | null }>;
 }
 
 interface TotalRecordsProps {

@@ -73,7 +73,6 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
             active={props.active_tile === "Patients"}
             tile_text="Patients"
             href="/patients"
-            query={{ active_page: "Table" }}
           />
           <NavigationTile
             active={props.active_tile === "In Door Patient"}

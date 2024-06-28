@@ -127,7 +127,7 @@ const Attatchment: React.FunctionComponent<Iprops> = ({
           <button
             type="submit"
             className="w-30 h-[90%] rounded bg-[#FFB800] px-4 py-2 text-[16px]/[19.2px] font-normal text-black"
-            onClick={handleSubmit}
+            onClick={saveAndNextClick}
           >
             Save & Next
           </button>

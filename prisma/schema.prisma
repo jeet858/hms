@@ -32,26 +32,52 @@ model VerificationToken {
 }
 
 model Patient{
-    patientId                String @id
-    firstName                String
-    lastName                 String
-    dob                      DateTime
-    gender                   String
-    contactNumber            String
-    email                    String
-    address                  String
-    emergencyContactName     String
-    emergencyContactRelation String
-    emergencyContactNumber   String
-    insauranceDetails        String
-    medicalHistory           String[]
-    allergies                String
-    primaryPhysician         String
-    prefferedLanguage        String
-    admission                Admission[]
-    vitalSigns               VitalSigns[] 
+    patientId                    String @id
+    firstName                    String
+    lastName                     String
+    dob                          DateTime
+    fathersName                  String?
+    spousesName                  String?
+    gender                       String
+    contactNumber                String
+    email                        String?
+    address1                     String
+    address2                     String?
+    city                         String
+    emergencyContactName         String?
+    emergencyContactRelation     String?
+    emergencyContactNumber       String?
+    insuranceCompany             String?
+    policyNumber                 String?
+    prefferedLanguage            String?
+    admission                    Admission[]
+    vitalSigns                   VitalSigns[]
+    patientPrimaryMedicalDetails PatientPrimaryMedicalDetails?
+    patientAttachment            PatientAttachment?
 }
 
+model PatientPrimaryMedicalDetails{
+  patientId         String @id 
+  height            Int?      // height in cms
+  weight            Int?      // weight in kgs
+  bloodPressure     String?
+  bloodGroup        String?
+  medicalHistory    String?
+  reference         String?
+  allergies         String?
+  primaryPhysician  String?
+  patient           Patient @relation(fields: [patientId], references: [patientId])
+}
+model PatientAttachment{
+  patientId        String @id
+  aadharCard       String?
+  panCard          String?
+  passport         String?
+  visa             String?
+  referral         String?
+  lastPrescription String?
+  patient           Patient @relation(fields: [patientId], references: [patientId])
+}
 model Admission{
     patientId           String
     admissionId         String @id

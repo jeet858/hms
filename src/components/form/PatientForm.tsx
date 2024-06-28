@@ -5,6 +5,7 @@ import Insurance from "./patient/Insurance";
 import Attatchment from "./patient/Attatchment";
 import AdmissionDetails from "./patient/AdmissionDetails";
 import OtherInfo from "./patient/OtherInfo";
+import { api } from "~/utils/api";
 
 const PatientForm: React.FC = () => {
   const [form, setForm] = useState<
@@ -65,7 +66,9 @@ const PatientForm: React.FC = () => {
           <Attatchment
             data={attatchment}
             setData={setAttatchment}
-            saveAndNextClick={() => {}}
+            saveAndNextClick={() => {
+              setForm("admissionDetails");
+            }}
           />
         );
         break;
@@ -74,7 +77,9 @@ const PatientForm: React.FC = () => {
           <AdmissionDetails
             data={admissionDetails}
             setData={setAdmissionDetails}
-            saveAndNextClick={() => {}}
+            saveAndNextClick={() => {
+              create();
+            }}
           />
         );
         break;
@@ -98,7 +103,7 @@ const PatientForm: React.FC = () => {
     city: "",
     contactNumber: "",
     emergencyContact: "",
-    guardianName: "",
+    emergencyContactName: "",
     relation: "",
     emailAddress: "",
   });
@@ -144,6 +149,49 @@ const PatientForm: React.FC = () => {
     primaryPhysician: "",
     preferredLanguage: "",
   });
+  const createPatient = api.patient.addPatient.useMutation({
+    onSuccess(data, variables, context) {
+      alert("Patient created successfully");
+    },
+    onError(error, variables, context) {
+      alert(`Error: ${error.message}`);
+    },
+  });
+  const create = () => {
+    createPatient.mutate({
+      address1: contactInfo.address1,
+      city: contactInfo.city,
+      contactNumber: contactInfo.contactNumber,
+      dob: new Date(personalInfo.dateOfBirth),
+      firstName: personalInfo.firstName,
+      gender: personalInfo.gender,
+      lastName: personalInfo.lastName,
+      // aadharCard: attatchment.aadharCard,
+      address2: contactInfo.address2,
+      allergies: otherInfo.allergies,
+      bloodGroup: personalInfo.bloodGroup,
+      bloodPressure: otherInfo.bloodPressure,
+      email: contactInfo.emailAddress,
+      emergencyContactName: contactInfo.emergencyContactName,
+      emergencyContactNumber: contactInfo.emergencyContact,
+      emergencyContactRelation: contactInfo.relation,
+      fathersName: personalInfo.fathersName,
+      height: otherInfo.height === "" ? 0 : parseInt(otherInfo.height),
+      insuranceCompany: insuranceInfo.insuranceCompany,
+      // lastPrescription: attatchment.lastPrescription,
+      medicalHistory: otherInfo.medicalHistory,
+      // panCard:attatchment.panCard,
+      // passport:attatchment.passport,
+      policyNumber: insuranceInfo.policyNo,
+      prefferedLanguage: otherInfo.preferredLanguage,
+      primaryPhysician: otherInfo.primaryPhysician,
+      reference: otherInfo.reference,
+      // referral:attatchment.referralLetter,
+      spousesName: personalInfo.spousesName,
+      // visa:attatchment.visa,
+      weight: otherInfo.weight === "" ? 0 : parseInt(otherInfo.weight),
+    });
+  };
   return (
     <div className="flex min-h-full w-full flex-col border ">
       <div className="flex h-fit flex-row items-center justify-evenly pb-6 pt-4 font-sansation font-bold">

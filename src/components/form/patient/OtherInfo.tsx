@@ -45,7 +45,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.height}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -56,7 +55,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.weight}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -67,7 +65,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.bloodPressure}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -77,7 +74,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.medicalHistory}
           onChange={handleChange}
           className="block max-h-14 min-h-14 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         ></textarea>
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -88,7 +84,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.reference}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -99,7 +94,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.allergies}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -110,7 +104,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.primaryPhysician}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="flex w-[60%] flex-row justify-between">
@@ -121,7 +114,6 @@ const OtherInfo: React.FunctionComponent<IProps> = ({
           value={data.preferredLanguage}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
-          required
         />
       </div>
       <div className="ml-[38.7%] flex h-10 w-fit flex-row items-center space-x-4">

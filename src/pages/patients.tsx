@@ -1,180 +1,56 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { DashboardTemplate, IndoorPatientTemplate } from "~/components";
 import ManageTile from "~/components/elements/ManageTile";
 import PatientForm from "~/components/form/PatientForm";
 import TileLayout from "~/components/layout/TileLayout";
 import CustomTable from "~/components/tables/CustomTable";
+import { api } from "~/utils/api";
 
 const Patients: React.FC = () => {
   const width = [
     "w-[7%]",
     "w-[15%]",
     "w-[7%]",
-    "w-[15%]",
+    "w-[5%]",
     "w-[10%]",
     "w-[15%]",
-    "w-[12%]",
+    "w-[20%]",
     "w-[10%]",
     "w-[10%]",
   ];
   const headers = [
-    "ID",
-    "Name",
-    "Gender",
-    "Age",
+    "patientId",
+    "name",
+    "gender",
+    "age",
     "BloodGroup",
-    "ContactNumber",
-    "EmailId",
-    "BirthDate",
+    "contactNumber",
+    "email",
+    "dob",
     "BedNo",
   ];
-  const data = [
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-    {
-      ID: "PT 101",
-      Name: "Deepak Mazumder",
-      Gender: "Male",
-      Age: "32",
-      BloodGroup: "A+",
-      ContactNumber: "9830012300",
-      EmailId: "abc@gmail.com",
-      BirthDate: "10/01/1990",
-      BedNo: "10101",
-    },
-  ];
+
   const router = useRouter();
   const { active_page } = router.query;
+  const [initialFetch, setInitialFetch] = useState(false);
+  const {
+    data: data,
+    isFetched,
+    isError,
+    isLoading,
+  } = api.patient.getAllPatient.useQuery();
+
+  useEffect(() => {
+    if (!initialFetch && isFetched) {
+      console.log(data);
+
+      setInitialFetch(true);
+    }
+  }, [initialFetch, isFetched]);
+  if (isError || isLoading || data === undefined) {
+    return <div></div>;
+  }
   return (
     <DashboardTemplate active_tile="Patients">
       <div className="h-full w-full p-[1%]">
