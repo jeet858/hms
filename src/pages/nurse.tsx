@@ -3,10 +3,9 @@ import { DashboardTemplate } from "~/components";
 import TileLayout from "~/components/layout/TileLayout";
 import ManageTile from "~/components/elements/ManageTile";
 import CustomTable from "../components/tables/CustomTable";
-import AddDoctorForm from "../components/form/AddDoctorForm";
 import AddNurseForm from "~/components/form/AddNurseForm";
 
-const Doctor: React.FC = () => {
+const Nurse: React.FC = () => {
   // const [page, setPage] = useState<number>(1);
   const headers = [
     "ID",
@@ -223,4 +222,4 @@ const Doctor: React.FC = () => {
     </DashboardTemplate>
   );
 };
-export default Doctor;
+export default Nurse;
