@@ -36,7 +36,7 @@ const NurseContact: React.FC<IProps> = ({
 
   return (
     <form
-      className="space-y-[0.7%] p-4 font-lato text-[20px]/[24px] font-normal"
+      className="space-y-[0.7%] p-4 font-lato text-[19px]/[24px] font-normal"
       onSubmit={handleSubmit}
     >
       <div className="required flex w-[60%] flex-row justify-between">

@@ -36,9 +36,9 @@ const NursePersonalInfo:React.FC<Iprops> = ({data,setData,saveAndNextClick,}) =>
 
 
   return (
-    <form className="space-y-[0.7%] px-4 pb-2 font-lato text-[20px]/[24px] font-normal">
+    <form className="space-y-[0.7%] px-4 pb-2 font-lato text-[19px]/[24px] font-normal">
       <div className="flex w-[60%] flex-row justify-between">
-        <label className="block text-gray-700">Patient ID</label>
+        <label className="block text-gray-700">Nurse ID</label>
         <input
           type="text"
           className=" block  h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"

@@ -32,7 +32,7 @@ const NurseAttatchment:React.FC<Iprops> = ({data,setData,saveAndNextClick}) => {
 
   return (
     <div>
-      <div className="flex w-full flex-col p-4 font-lato text-[20px]/[24px] font-normal text-[#a4a3a3]">
+      <div className="flex w-full flex-col p-4 font-lato text-[19px]/[24px] font-normal text-[#a4a3a3]">
         <span>Upload the mentioned files here</span>
         <span className="text-[18px]/[21.6px]">
           ( Accepted file types are jpg, jpeg, png, pdf in max 25MB )
@@ -43,7 +43,7 @@ const NurseAttatchment:React.FC<Iprops> = ({data,setData,saveAndNextClick}) => {
         className="space-y-[0.7%] p-4 font-lato text-[20px]/[24px] font-normal"
       >
         <div className="required flex w-[60%] flex-row justify-between">
-          <label className="block text-gray-700">Passport Size Image</label>
+          <label className="block text-gray-700">Passport Size Photo</label>
           <input
             type="file"
             name="aadharCard"
