@@ -26,8 +26,8 @@ const tabTwo: React.FC<Iprops> = ({
 
   return (
     <div className="h-full w-full">
-      <div className="flex h-full w-full flex-col rounded shadow ">
-        <div className="flex space-x-1 border border-b-0 bg-blue-50">
+      <div className="flex h-fit min-h-full w-full flex-col rounded shadow ">
+        <div className="flex space-x-1 border h-[10%] border-b-0 bg-blue-50">
           <button
             className={`px-4 py-2 ${activeTab === "tabOne" ? "border-white bg-white font-bold text-[#000000] " : "text-[#000000]"}`}
             onClick={() => setActiveTab("tabOne")}
@@ -55,7 +55,7 @@ const tabTwo: React.FC<Iprops> = ({
             </div>
           </button>
         </div>
-        <div className="h-[90%] p-4">
+        <div className=" grow p-4">
           {activeTab === "tabOne" && (
             <div className="">
               {/* Doctor list content goes here */}
