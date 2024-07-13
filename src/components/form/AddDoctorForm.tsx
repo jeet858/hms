@@ -10,56 +10,58 @@
 
 // CreateDoctor.tsx
 
-import React, { useState, ChangeEvent } from "react";
-// import demoprofilepic from "../../../images/demoprofilepic.png";
+import Image from "next/image";
+import React, { useState, type ChangeEvent } from "react";
+import demoprofilepic from "../../../images/demoprofilepic.png";
+import { FaCamera } from "react-icons/fa";
 
 const AddDoctorForm: React.FC = () => {
-  const [profilePic, setProfilePic] = useState<string>("/demoprofilepic.png");
-
-  //   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //     if (e.target.files && e.target.files[0]) {
-  //       setProfilePic(URL.createObjectURL(e.target.files[0]));
-  //     }
-  //   };
+  const [profilePic, setProfilePic] = useState<string|null>(null);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfilePic(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+    if (event.target.files?.[0]) {
+      setProfilePic(URL.createObjectURL(event.target.files[0]));
     }
   };
 
   return (
     <div className="border-w-2 border border-[#00000040] p-1">
       <h1 className="w-full p-4 text-2xl text-[#00000073]">Create Profile</h1>
-      <div className="flex w-full max-w-2xl">
+      <div className="flex w-full">
         {/* Left Section */}
-        <div className="flex w-1/3 flex-col items-center p-2">
+        <div className="flex w-1/3 flex-col items-center p-2 relative">
           <label
             htmlFor="profilePicInput"
             className="mb-4 h-32 w-32 cursor-pointer overflow-hidden rounded-full border border-[#00000040]"
           >
-            <img
-              src={profilePic}
-              alt="00Profile00"
-              className="h-full w-full object-cover"
-            />
+            {
+              profilePic?(
+                <img
+                  src={profilePic}
+                  alt="00Profile00"
+                  className="h-full w-full object-cover"
+                />
+              ):
+              (
+                <Image
+                  src={demoprofilepic}
+                  alt="00Profile00"
+                  className="h-full w-full object-cover"
+                />
+              )
+            }
           </label>
           <input
             id="profilePicInput"
             type="file"
-            accept="image/*"
             onChange={handleFileChange}
             className="hidden"
           />
+          <FaCamera className="absolute w-5 h-5 right-[26%]"/>
         </div>
         <div className=" h-96 w-0.5 border border-gray-300"/>
         {/* Right Section */}
-        <div className="ml-5 w-2/3">
+        <div className="ml-5 mb-5 w-2/3 font-lato">
           <form className="space-y-2">
             <div className="flex items-center space-x-4">
               <label className="block w-[40%] text-sm font-medium">
@@ -165,13 +167,13 @@ const AddDoctorForm: React.FC = () => {
             <div className="flex justify-end space-x-3">
               <button
                 type="submit"
-                className="rounded-sm bg-[#FFB800] px-[10%] py-2 text-black"
+                className="rounded-sm border-2 border-[#FFB800] bg-[#FFB800] px-[10%] h-[50%] text-black"
               >
                 SAVE
               </button>
               <button
                 type="button"
-                className="rounded-sm border-2 bg-white px-[9%] py-2 text-black"
+                className="rounded-sm border-2 bg-white px-[10%] h-[50%]  text-black"
               >
                 CANCEL
               </button>
