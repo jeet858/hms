@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PersonalInfo from "./patient/PersonalInfo";
 import EmployeeContact from "./employee/EmployeeContact";
 import EmployeeAttatchment from "./employee/EmployeeAttatchment";
+import EmpPersonalInfo from "./employee/EmployeePersonalDetails";
 
 const EmployeeDetails: React.FC = () => {
   const [form, setForm] = useState<
@@ -13,7 +14,7 @@ const EmployeeDetails: React.FC = () => {
     switch (form) {
       case "personalInfo":
         return (
-          <PersonalInfo
+          <EmpPersonalInfo
             data={personalInfo}
             setData={setPersonalInfo}
             saveAndNextClick={() => {
@@ -54,6 +55,15 @@ const EmployeeDetails: React.FC = () => {
     relationshipStatus: "",
     religion: "",
     bloodGroup: "",
+    depertment: "",
+    designation: "",
+    role: "",
+    insuranceID: "",
+    //doj=Date of Joining dol=Date of leaving
+    doj: "",
+    dol: "",
+    username: "",
+    passwoard: "",
   });
   const [empcontactInfo, setEmpContactInfo] = useState({
     address1: "",
