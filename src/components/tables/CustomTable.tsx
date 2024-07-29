@@ -17,7 +17,11 @@ const CustomTable: React.FC<TableProps> = (props) => {
       setCurrentPage(newPage);
     }
   };
-
+  function formatTime(date: Date): string {
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    return `${hours}:${minutes}`;
+  }
   const startIndex = (currentPage - 1) * entriesToShow;
   const endIndex = startIndex + entriesToShow;
   const paginatedData = props.data.slice(startIndex, endIndex);
@@ -61,18 +65,41 @@ const CustomTable: React.FC<TableProps> = (props) => {
                   key={rowIndex}
                   className="flex w-full border-b border-gray-300"
                 >
-                  {props.headers.map((header, colIndex) => (
-                    <div
-                      key={colIndex}
-                      className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]} break-all`}
-                    >
-                      {header === "name"
-                        ? `${item["firstName"]} ${item["lastName"]}`
-                        : header === "dob" && item["dob"]
-                          ? `${new Date(item["dob"]).toLocaleDateString()}`
-                          : (item[header] as string)}
-                    </div>
-                  ))}
+                  {props.headers.map((header, colIndex) => {
+                    let content;
+                    if (header === "name") {
+                      if (item["firstName"] === undefined) {
+                        content = item["name"] as string;
+                        console.log("in if");
+                      } else {
+                        content = `${item["firstName"]} ${item["lastName"]}`;
+                      }
+                    } else if (header === "dob" && item["dob"]) {
+                      if (
+                        typeof item["dob"] === "string" ||
+                        typeof item["dob"] === "number"
+                      ) {
+                        content = new Date(item["dob"]).toLocaleDateString();
+                      } else {
+                        content = item[header] as string;
+                      }
+                    } else if (Array.isArray(item[header])) {
+                      const result = item[header].join(", "); // "ab, cd"
+                      content = result;
+                    } else if (header === "timing") {
+                      content = `${new Date(item["startTime"] as string).toLocaleTimeString()} - ${new Date(item["startTime"] as string).toLocaleTimeString()}`;
+                    } else {
+                      content = item[header] as string;
+                    }
+                    return (
+                      <div
+                        key={colIndex}
+                        className={`flex border-r border-gray-300 p-[0.5%] text-xs ${props.widths[colIndex]} break-all`}
+                      >
+                        {content}
+                      </div>
+                    );
+                  })}
                 </div>
               ))}
             </div>
@@ -139,7 +166,7 @@ const CustomTable: React.FC<TableProps> = (props) => {
 interface TableProps {
   headers: string[];
   widths: string[];
-  data: Array<{ [key: string]: string | number | Date | null }>;
+  data: Array<{ [key: string]: string | number | Date | null | string[] }>;
 }
 
 interface TotalRecordsProps {

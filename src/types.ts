@@ -51,3 +51,19 @@ export const addPatientSchema = z.object({
   policyNumber: z.string().optional(),
   prefferedLanguage: z.string().optional(),
 });
+export const addDoctorSchema = z.object({
+  name: z.string({ required_error: "Name is required" }),
+  contactNumber: z.string({ required_error: "Contact number is required" }),
+  gender: z.string({ required_error: "Gender number is required" }),
+  email: z
+    .string({ required_error: "Email is required" })
+    .email("Invalid email format"),
+  password: z.string({ required_error: "Password is required" }),
+  department: z.string({ required_error: "Department is required" }),
+  language: z.string({ required_error: "Language is required" }),
+  availableDays: z.array(z.string(), {
+    required_error: "Available days are required",
+  }),
+  startTime: z.date({ required_error: "Start time is required" }),
+  endTime: z.date({ required_error: "End time is required" }),
+});

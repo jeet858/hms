@@ -55,7 +55,19 @@ model Patient{
     patientPrimaryMedicalDetails PatientPrimaryMedicalDetails?
     patientAttachment            PatientAttachment?
 }
-
+model Doctor{
+  doctorId      String @id
+  name          String 
+  contactNumber String
+  email         String
+  gender        String 
+  password      String
+  department    String
+  language      String
+  availableDays String[]
+  startTime     DateTime
+  endTime       DateTime 
+}
 model PatientPrimaryMedicalDetails{
   patientId         String @id 
   height            Int?      // height in cms
