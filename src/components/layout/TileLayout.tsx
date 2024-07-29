@@ -6,10 +6,10 @@ import { MdOutlineAdd } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 
 interface Iprops {
-  tileone: string;
-  tiletwo: string;
-  children1: JSX.Element | JSX.Element[];
-  children2: JSX.Element | JSX.Element[];
+  tileone?: string;
+  tiletwo?: string;
+  children1?: JSX.Element | JSX.Element[];
+  children2?: JSX.Element | JSX.Element[];
   activeTabProps?: "tabOne" | "tabTwo";
 }
 
@@ -57,7 +57,7 @@ const tabTwo: React.FC<Iprops> = ({
         </div>
         <div className="h-[90%] p-4">
           {activeTab === "tabOne" && (
-            <div className="">
+            <div className="h-full w-full">
               {/* Doctor list content goes here */}
               {/* <p>Doctor List Content</p> */}
               {children1}
