@@ -20,7 +20,8 @@ interface MainPageTemplateProps {
     | "Patients"
     | "Nurses"
     | "In Door Patient"
-    | "Out Door Patient";
+    | "Out Door Patient"
+    | "Rooms";
 }
 const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -83,6 +84,11 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
             active={props.active_tile === "Out Door Patient"}
             tile_text="Out Door Patient"
             href=""
+          />
+          <NavigationTile
+            active={props.active_tile === "Rooms"}
+            tile_text="Rooms"
+            href="room-details"
           />
         </div>
       </div>

@@ -249,7 +249,7 @@ const roomdetails: React.FunctionComponent = () => {
       Status: "Occupied",
       RatePerBed: "999.00",
     },
-  ]
+  ];
   const width = [
     "w-[7%]",
     "w-[15%]",
@@ -260,10 +260,10 @@ const roomdetails: React.FunctionComponent = () => {
     "w-[12%]",
     "w-[10%]",
     "w-[10%]",
-  ]
+  ];
 
   return (
-    <DashboardTemplate active_tile="Doctors">
+    <DashboardTemplate active_tile="Rooms">
       {/* <div className="flex w-full flex-col gap-8  p-4">
         <div className="flex w-full flex-row items-center justify-between">
           <span className="text-3xl font-medium text-[#000000CC]">
@@ -320,21 +320,21 @@ const roomdetails: React.FunctionComponent = () => {
             <div className=" ">
               <>
                 {/* Conditionally render either RoomDetailsTableComponent or AddRoomComponent */}
-                {/* {showAddRoom ? (
+      {/* {showAddRoom ? (
                   <AddRoomComponent />
                 ) : (
                   <RoomDetailsTableComponent />
                 )}
               </> */}
-             {/* </div> */}
-          {/* </div> */}
-        {/* </div> */}
-      {/* </div> */} 
+      {/* </div> */}
+      {/* </div> */}
+      {/* </div> */}
+      {/* </div> */}
       <div className="h-full w-full p-[1%]">
         <div>
           <div>
             <ManageTile
-              title="Manage Doctor"
+              title="Manage Room"
               doctors={22}
               patients={13400}
               nurses={107}
@@ -348,8 +348,10 @@ const roomdetails: React.FunctionComponent = () => {
               <TileLayout
                 tileone={"Room Master"}
                 tiletwo={"Add Room"}
-                children1={<CustomTable headers={headers} data={data} widths={width} />}
-                children2={<AddRoomForm/>}
+                children1={
+                  <CustomTable headers={headers} data={data} widths={width} />
+                }
+                children2={<AddRoomForm />}
               />
             </div>
           </div>
