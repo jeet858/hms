@@ -1,26 +1,26 @@
 import React, { Dispatch, SetStateAction } from "react";
 
-interface ContactDetailsData {
-  address1: string;
-  address2: string;
-  city: string;
-  contactNumber: string;
-  emergencyContact: string;
-  guardianName: string;
-  relation: string;
-  emailAddress: string;
+interface NurseContactDetailsData {
+  nurseaddress1: string;
+  nurseaddress2: string;
+  nursecity: string;
+  nursecontactNumber: string;
+  nurseemergencyContact: string;
+  nurseguardianName: string;
+  nurserelation: string;
+  nurseemailAddress: string;
 }
 
 interface IProps {
-  data: ContactDetailsData;
-  setData: Dispatch<SetStateAction<ContactDetailsData>>;
+  data: NurseContactDetailsData;
+  setData: Dispatch<SetStateAction<NurseContactDetailsData>>;
   saveAndNextClick: () => void;
 }
 
-const ContactDetails: React.FunctionComponent<IProps> = ({
+const NurseContact: React.FC<IProps> = ({
   data,
-  saveAndNextClick,
   setData,
+  saveAndNextClick,
 }) => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -36,7 +36,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
 
   return (
     <form
-      className="space-y-[0.7%] p-4 font-lato text-[20px]/[24px] font-normal"
+      className="space-y-[0.7%] p-4 font-lato text-[19px]/[24px] font-normal"
       onSubmit={handleSubmit}
     >
       <div className="required flex w-[60%] flex-row justify-between">
@@ -44,7 +44,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="text"
           name="address1"
-          value={data.address1}
+          value={data.nurseaddress1}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -55,7 +55,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="text"
           name="address2"
-          value={data.address2}
+          value={data.nurseaddress2}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -65,7 +65,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <label className="block text-gray-700">City</label>
         <input
           name="city"
-          value={data.city}
+          value={data.nursecity}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -76,7 +76,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="number"
           name="contactNumber"
-          value={data.contactNumber}
+          value={data.nursecontactNumber}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -87,7 +87,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="number"
           name="emergencyContact"
-          value={data.emergencyContact}
+          value={data.nurseemergencyContact}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -98,7 +98,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="text"
           name="guardianName"
-          value={data.guardianName}
+          value={data.nurseguardianName}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -109,7 +109,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="text"
           name="relation"
-          value={data.relation}
+          value={data.nurserelation}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -120,7 +120,7 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
         <input
           type="email"
           name="emailAddress"
-          value={data.emailAddress}
+          value={data.nurseemailAddress}
           onChange={handleChange}
           className="block h-7 w-[65%] rounded-sm border border-gray-300 p-2 text-[12px]/[14.4px] text-[#958E8E]"
           required
@@ -145,4 +145,4 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
   );
 };
 
-export default ContactDetails;
+export default NurseContact;

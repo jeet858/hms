@@ -7,6 +7,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sansation: ['Sansation', 'sans-serif'],
+        lato:['Lato','sans-serif'],
+        inter:['Inter','sans-serif'],
       },
     },
   },

@@ -30,3 +30,136 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Patient{
+    patientId                String @id
+    firstName                String
+    lastName                 String
+    dob                      DateTime
+    gender                   String
+    contactNumber            String
+    email                    String
+    address                  String
+    emergencyContactName     String
+    emergencyContactRelation String
+    emergencyContactNumber   String
+    insauranceDetails        String
+    medicalHistory           String[]
+    allergies                String
+    primaryPhysician         String
+    prefferedLanguage        String
+    admission                Admission[]
+    vitalSigns               VitalSigns[] 
+}
+
+model Admission{
+    patientId           String
+    admissionId         String @id
+    treatmentId         String
+    medicationId        String
+    admissionDate       DateTime
+    dischargeDate       DateTime
+    ward                String
+    roomNumber          String
+    bedNumber           String
+    attendingPhysician  String
+    admissionReason     String
+    admissionType       String
+    referralSource      String
+    patient             Patient @relation(fields: [patientId], references: [patientId])
+    treatment           Treatment[]
+    vitalSigns          VitalSigns[] 
+    billings            Billing[]
+    dischargeSummary    DischargeSummary[]
+    medication          Medication[]
+    procedure           Procedure[]
+
+}
+
+model Treatment {
+  treatmentId               String   @id
+  admissionId               String
+  treatmentDate             DateTime
+  treatmentDescription      String
+  attachedReports           String   
+  medicationsAdministered   String
+  treatingPhysician         String
+  procedureId               String
+  procedureCode             String
+  outcome                   String
+  followUpRequired          Boolean
+  treatmentPriority         String
+  admission                 Admission @relation(fields: [admissionId], references: [admissionId])
+  procedure                 Procedure[]
+}
+model VitalSigns {
+  vitalSignId       String   @id
+  admissionId       String
+  patientId         String
+  measurementDate   DateTime
+  temperature       Float
+  bloodPressure     String
+  heartRate         Int
+  respiratoryRate   Int
+  oxygenSaturation  Float
+  weight            Float
+  height            Float
+  painLevel         Int
+  patient           Patient @relation( fields: [patientId], references: [patientId])
+  admission         Admission @relation( fields: [admissionId], references: [admissionId])
+  
+}
+model Billing {
+  billId            String   @id
+  admissionId       String
+  billDate          DateTime
+  itemDescription   String
+  cost              Float
+  billingStatus     String
+  insuranceParty    String
+  insuranceCoverage Float
+  insuranceStatus   String
+  patientPayment    Float
+  totalAmount       Float
+  admission         Admission @relation( fields: [admissionId], references: [admissionId])
+  dischargeSummary  DischargeSummary[]
+}
+model DischargeSummary {
+  dischargeSummaryId    String   @id
+  admissionId           String
+  dischargeDate         DateTime
+  dischargeDiagnosis    String
+  followUpInstructions  String
+  nextFollowUpDate      DateTime
+  prescribedMedications String
+  finalBill             Float   // Referencing TotalAmount from Billing table
+  billId                String
+  dischargeNotes        String
+  nextAppointmentDate   DateTime
+  admission             Admission @relation( fields: [admissionId], references: [admissionId])
+  billing               Billing   @relation(fields: [billId], references: [billId])
+}
+model Medication {
+  medicationId         String   @id
+  admissionId          String
+  medicationName       String
+  dosage               String
+  administrationRoute  String
+  frequency            String
+  startDate            DateTime
+  endDate              DateTime
+  administeringNurse   String
+  admission            Admission @relation( fields: [admissionId], references: [admissionId])
+}
+model Procedure {
+  procedureId          String   @id
+  admissionId          String
+  procedureDate        DateTime
+  procedureName        String
+  procedureDescription String
+  surgeon              String
+  anesthesiologist     String
+  procedureOutcome     String   // Referencing Outcome from Treatment table
+  admission            Admission @relation( fields: [admissionId], references: [admissionId])
+  treatment            Treatment[]
+  }

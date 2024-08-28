@@ -6,18 +6,22 @@ import power_icon from "../../../images/power_icon.png";
 import Image from "next/image";
 import NavigationTile from "../elements/NavigationTile";
 import {
+  FaArrowLeft,
+  FaArrowRight,
   FaBell,
   FaPowerOff,
   FaSearch,
   FaUser,
   FaUserAlt,
 } from "react-icons/fa";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { signOut } from "next-auth/react";
 interface MainPageTemplateProps {
   children?: JSX.Element | JSX.Element[];
   active_tile:
     | "Home"
+    | "In Door Patient"
     | "Available Patients"
     | "Available Doctors"
     | "Doctor List"
@@ -57,6 +61,16 @@ const IndoorPatientTemplate: React.FC<MainPageTemplateProps> = (props) => {
       <div className="flex h-full w-1/5 flex-col">
         <Image src={logo} alt="" className="h-[7.5%] w-4/5 self-center" />
         <div className="mt-8 flex h-fit w-full flex-col gap-y-4 self-center">
+          <div className="relative flex w-full min-w-full items-center ">
+            <NavigationTile
+              active={props.active_tile === "Home"}
+              tile_text="Home"
+              href="/"
+            />
+            <div className="absolute z-10 flex w-4/5 cursor-pointer items-end justify-end">
+              <FiArrowRight className="mr-5 h-8 w-8  text-[#006B82]" />
+            </div>
+          </div>
           <div
             className="relative flex w-full min-w-full items-center "
             onClick={() => {
@@ -64,8 +78,8 @@ const IndoorPatientTemplate: React.FC<MainPageTemplateProps> = (props) => {
             }}
           >
             <NavigationTile
-              active={props.active_tile === "Home"}
-              tile_text="Home"
+              active={props.active_tile === "In Door Patient"}
+              tile_text="In Door Patient"
               href=""
             />
             <div className="absolute z-10 flex w-4/5 cursor-pointer items-end justify-end">
@@ -84,16 +98,16 @@ const IndoorPatientTemplate: React.FC<MainPageTemplateProps> = (props) => {
                 tile_text="Available Doctors"
                 href="available-doctor"
               />
-              <NavigationTile
+              {/* <NavigationTile
                 active={props.active_tile === "Doctor List"}
                 tile_text="Doctor List"
-                href=""
+                href="doctor"
               />
               <NavigationTile
                 active={props.active_tile === "Add Patient"}
                 tile_text="Add Patient"
-                href=""
-              />
+                href="/patients"
+              /> */}
             </div>
           ) : null}
         </div>

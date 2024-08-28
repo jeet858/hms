@@ -17,6 +17,7 @@ interface MainPageTemplateProps {
   active_tile:
     | "Home"
     | "Doctors"
+    | "Patients"
     | "Nurses"
     | "In Door Patient"
     | "Out Door Patient";
@@ -61,12 +62,18 @@ const DashboardTemplate: React.FC<MainPageTemplateProps> = (props) => {
           <NavigationTile
             active={props.active_tile === "Doctors"}
             tile_text="Doctors"
-            href=""
+            href="/doctor"
           />
           <NavigationTile
             active={props.active_tile === "Nurses"}
             tile_text="Nurses"
             href=""
+          />
+          <NavigationTile
+            active={props.active_tile === "Patients"}
+            tile_text="Patients"
+            href="/patients"
+            query={{ active_page: "Table" }}
           />
           <NavigationTile
             active={props.active_tile === "In Door Patient"}

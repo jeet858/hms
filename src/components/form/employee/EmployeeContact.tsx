@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 
-interface ContactDetailsData {
+interface EmployeeContactData {
   address1: string;
   address2: string;
   city: string;
@@ -12,12 +12,12 @@ interface ContactDetailsData {
 }
 
 interface IProps {
-  data: ContactDetailsData;
-  setData: Dispatch<SetStateAction<ContactDetailsData>>;
+  data: EmployeeContactData;
+  setData: Dispatch<SetStateAction<EmployeeContactData>>;
   saveAndNextClick: () => void;
 }
 
-const ContactDetails: React.FunctionComponent<IProps> = ({
+const EmployeeContact: React.FunctionComponent<IProps> = ({
   data,
   saveAndNextClick,
   setData,
@@ -145,4 +145,4 @@ const ContactDetails: React.FunctionComponent<IProps> = ({
   );
 };
 
-export default ContactDetails;
+export default EmployeeContact;
