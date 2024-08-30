@@ -1,65 +1,88 @@
 import Image from "next/image";
 import React, { Fragment, type ReactElement, useState } from "react";
-import demo from "images/hx_4 1.png";
+import demo from "../../images/patientimg.png";
 import { DashboardTemplate } from "~/components";
 // import DetailsTable from "~/components/tables/DetailsTable";
 import Diagonosis from "~/components/elements/Diagonosis";
 import GeneralInfo from "~/components/elements/GeneralInfo";
-
-const PatientInfo:React.FunctionComponent = () => {
+import Medication from "~/components/elements/Medication";
+import Complain from "~/components/elements/Complain";
+import Progress from "~/components/elements/Progress";
+import IntakeOutputRecords from "~/components/elements/IntakeOutputRecords";
+import NurseProgressNote from "~/components/elements/NursePorgressNote";
+import VitalSign from "~/components/elements/VitalSign";
+import IpRoomTransfer from "~/components/elements/IpRoomTransfer";
+import OperationTheatre from "~/components/elements/OperationThreatre";
+import PatientHistory from "./PatientHistory";
+const PatientInfo: React.FunctionComponent = () => {
   const [arr, setArr] = useState([
     { name: "General Information", value: false, component: <GeneralInfo /> },
     { name: "Diagonosis", value: false, component: <Diagonosis /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
-    { name: "Abc", value: false, component: <Fragment /> },
+    { name: "Medication", value: false, component: <Medication /> },
+    { name: "Complain", value: false, component: <Complain /> },
+    { name: "Progress", value: false, component: <Progress /> },
+    {
+      name: "Intake/Output Records",
+      value: false,
+      component: <IntakeOutputRecords />,
+    },
+    {
+      name: "Nurse progress note",
+      value: false,
+      component: <NurseProgressNote />,
+    },
+    { name: "Vital Sign", value: false, component: <VitalSign /> },
+    { name: "IP Room Transfer", value: false, component: <IpRoomTransfer /> },
+    {
+      name: "Operation Theatre",
+      value: false,
+      component: <OperationTheatre />,
+    },
+    { name: "Patient History", value: false, component: <PatientHistory /> },
+    { name: "Laboratory", value: false, component: <PatientHistory /> },
+    { name: "Discharge Summary", value: false, component: <PatientHistory /> },
   ]);
-  const [selectedComponent, setSelectedComponent] = useState<ReactElement|null>(<GeneralInfo/>);
+  const [selectedComponent, setSelectedComponent] =
+    useState<ReactElement | null>(<GeneralInfo />);
   const handelBar = (index: number) => {
     const updatedList = arr.map((item, i) =>
-      i === index ? { ...item, value: true } : { ...item, value: false }
+      i === index ? { ...item, value: true } : { ...item, value: false },
     );
     setArr(updatedList);
-    updatedList[index]?setSelectedComponent(updatedList[index].component):setSelectedComponent(null)
+    updatedList[index]
+      ? setSelectedComponent(updatedList[index].component)
+      : setSelectedComponent(null);
   };
   return (
     <DashboardTemplate active_tile="In Door Patient">
-      <div className="flex h-full w-full flex-row overflow-y-scroll ">
-        <div className="flex  h-full w-[30%] flex-col">
-          <span>Patients Profile</span>
-          <Image className="h-64 w-fit" src={demo} alt="/" />
-          <div className="flex h-fit w-full flex-col">
-            {arr.map((item,index) => {
+      <div className="flex h-full w-full flex-row overflow-y-scroll pt-[2rem] ">
+        <div className="flex h-full w-[28%] flex-col space-y-[.5rem]">
+          <span className="h-[8%] text-[35px]">Patients Profile</span>
+          <Image className="h-[30%] w-fit" src={demo} alt="/" />
+          <div className=" flex h-[10%] w-[70%] flex-col space-y-[.4rem] border-b-[3px] border-zinc-400 pt-[.4rem]">
+            <span className="text-[22px] text-[#00738C]">Deepak Majumder</span>
+            <span className="text-[20px]">
+              ID: <span className="text-[#0E8803]">PT 101</span>
+            </span>
+          </div>
+          <div className="flex h-[42%] w-full flex-col justify-between space-y-[.5rem] py-[.5rem]">
+            {arr.map((item, index) => {
               return (
-                  <p
-                    key={index}
-                    onClick={()=>handelBar(index)}
-                    className="flex h-5 w-full justify-start space-x-4"
-                  >
-                    <span
-                      className={`h-full w-[10px] bg-[#FFB800] ${item.value ? "visible" : "invisible"}`}
-                    ></span>
-                    <span className="flex h-full items-center">
-                      {item.name}
-                    </span>
-                  </p>
-                
+                <div
+                  key={index}
+                  onClick={() => handelBar(index)}
+                  className="flex h-fit w-full justify-start pl-[2rem] text-[15px] hover:border-l-[8px] hover:border-yellow-400 hover:pl-[.2rem] hover:text-[#006B82]"
+                >
+                  <span
+                    className={`h-full w-[10px] bg-[#FFB800] ${item.value ? "visible" : "invisible"}`}
+                  ></span>
+                  <span className="flex h-full items-center">{item.name}</span>
+                </div>
               );
             })}
           </div>
         </div>
-        <div className="h-full w-[70%]">
-          {
-            selectedComponent
-          }
-        </div>
+        <div className="h-fit w-[70%] pt-[4.6rem]">{selectedComponent}</div>
       </div>
     </DashboardTemplate>
   );
