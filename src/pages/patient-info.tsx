@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { Fragment, type ReactElement, useState } from "react";
+import React, { type ReactElement, useState } from "react";
 import demo from "../../images/patientimg.png";
 import { DashboardTemplate } from "~/components";
 // import DetailsTable from "~/components/tables/DetailsTable";
@@ -55,8 +55,8 @@ const PatientInfo: React.FunctionComponent = () => {
   };
   return (
     <DashboardTemplate active_tile="In Door Patient">
-      <div className="flex h-full w-full flex-row overflow-y-scroll pt-[2rem] ">
-        <div className="flex h-full w-[28%] flex-col space-y-[.5rem]">
+      <div className="flex h-full w-full flex-row ">
+        <div className="flex h-full overflow-y-scroll  w-[28%] flex-col">
           <span className="h-[8%] text-[35px]">Patients Profile</span>
           <Image className="h-[30%] w-fit" src={demo} alt="/" />
           <div className=" flex h-[10%] w-[70%] flex-col space-y-[.4rem] border-b-[3px] border-zinc-400 pt-[.4rem]">
@@ -65,24 +65,24 @@ const PatientInfo: React.FunctionComponent = () => {
               ID: <span className="text-[#0E8803]">PT 101</span>
             </span>
           </div>
-          <div className="flex h-[42%] w-full flex-col justify-between space-y-[.5rem] py-[.5rem]">
+          <span className="flex-1 flex-col justify-between space-y-[.5rem] py-[.5rem]">
             {arr.map((item, index) => {
               return (
                 <div
                   key={index}
                   onClick={() => handelBar(index)}
-                  className="flex h-fit w-full justify-start pl-[2rem] text-[15px] hover:border-l-[8px] hover:border-yellow-400 hover:pl-[.2rem] hover:text-[#006B82]"
+                  className={`flex h-fit w-full justify-start pl-[2rem] text-[15px] hover:border-l-[8px] hover:border-yellow-400 hover:text-[#006B82] ${item.value ?'border-l-[8px] border-yellow-400 pl-[.2rem] text-[#006B82]':""}`}
                 >
-                  <span
-                    className={`h-full w-[10px] bg-[#FFB800] ${item.value ? "visible" : "invisible"}`}
-                  ></span>
+                  {/* <span
+                    className={`h-full w-[5px] bg-[#FFB800] ${item.value ? "visible" : "invisible"}`}
+                  ></span> */}
                   <span className="flex h-full items-center">{item.name}</span>
                 </div>
               );
             })}
-          </div>
+          </span>
         </div>
-        <div className="h-fit w-[70%] pt-[4.6rem]">{selectedComponent}</div>
+        <div className="h-full w-[70%] mt-[4.6rem]">{selectedComponent}</div>
       </div>
     </DashboardTemplate>
   );

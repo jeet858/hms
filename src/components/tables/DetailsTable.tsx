@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface DetailsTableProps {
   name: string;
   btntxt?: string;
-  arr: {
+  header: {
     name?: string;
     width: string;
   }[];
@@ -11,7 +11,7 @@ interface DetailsTableProps {
     index: number;
     remark: {
       width: string;
-      data: string;
+      data: string|ReactElement;
     }[];
   }[];
 }
@@ -26,7 +26,7 @@ const DetailsTable: React.FC<DetailsTableProps> = (props) => {
   // }
 
   return (
-    <div className="flex min-h-[6rem] w-full items-start rounded-md bg-[#f8eed6] pb-[1.5rem] shadow">
+    <div className="flex min-h-[6rem] max-h-full overflow-y-scroll w-full items-start rounded-md bg-[#f8eed6] pb-[1.5rem] shadow">
       <div className="flex w-full flex-col items-center space-y-1 rounded-md px-[.5rem] ">
         <div className="flex w-full items-center justify-between px-[10px]">
           <div className="flex h-[6vh] w-fit items-center justify-start border-t-[4px] border-[#287CC6] pb-2 font-sansation text-[22px] text-[#7E7E7E]">
@@ -37,7 +37,7 @@ const DetailsTable: React.FC<DetailsTableProps> = (props) => {
           </button>
         </div>
         <div className="flex min-h-10 w-[98%] flex-row flex-wrap justify-between">
-          {props.arr.map((item, index) => (
+          {props.header.map((item, index) => (
             <div
               key={index}
               className={`h-full whitespace-nowrap rounded border bg-white p-2 text-[#888787]`}

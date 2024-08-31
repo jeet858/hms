@@ -21,7 +21,7 @@ const Diagonosis: React.FC = () => {
   //     ],
   //   },
   // ];
-  return <DetailsTable name="Diagonosis" btntxt="+ Add diagnosis" arr={arr} />;
+  return <DetailsTable name="Diagonosis" btntxt="+ Add diagnosis" header={arr} />;
 };
 
 export default Diagonosis;

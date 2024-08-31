@@ -9,7 +9,7 @@ const NurseProgressNote: React.FC = () => {
     { name: "Prepared By", width: "22%" },
   ];
   return (
-    <DetailsTable name="Nurse progress note" btntxt="+ Add note" arr={arr} />
+    <DetailsTable name="Nurse progress note" btntxt="+ Add note" header={arr} />
   );
 };
 

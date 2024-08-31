@@ -12,7 +12,7 @@ const Complain: React.FC = () => {
   //     {name:'Remarks',width:'29.5%'},
   //     {name:'Remarks',width:'19.5%'},
   // ];
-  return <DetailsTable name="Complain" btntxt="+ Add complain" arr={arr} />;
+  return <DetailsTable name="Complain" btntxt="+ Add complain" header={arr} />;
 };
 
 export default Complain;

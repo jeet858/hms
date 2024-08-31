@@ -1,23 +1,23 @@
 import React from "react";
 import DetailsTable from "../tables/DetailsTable";
 const IntakeOutputRecords: React.FC = () => {
-    const arr1 = [
-      { name: "date Time", width: "10%" },
-      { name: "Particulars", width: "17%" },
-      { name: "I/V Fluid (ML)", width: "14%" },
-      { name: "Oral (ML)", width: "10%" },
-      { name: "Freq. Of Stool", width: "14%" },
-      { name: "Freq. Of Urine", width: "14%" },
-      { name: "Prepared By", width: "20%" },
-    ];
-     const arr2 = [
-       { name: "Date Time", width: "13%" },
-       { name: "Urine (ML)", width: "17%" },
-       { name: "Feaces (ML)", width: "17%" },
-       { name: "Respiration (ML)", width: "17%" },
-       { name: "Skin (ML)", width: "13%" },
-       { name: "prepared by", width: "20%" },
-     ];
+  const arr1 = [
+    { name: "Date Time", width: "10%" },
+    { name: "Particulars", width: "17%" },
+    { name: "I/V Fluid (ML)", width: "14%" },
+    { name: "Oral (ML)", width: "10%" },
+    { name: "Freq. Of Stool", width: "14%" },
+    { name: "Freq. Of Urine", width: "14%" },
+    { name: "Prepared By", width: "17%" },
+  ];
+  const arr2 = [
+    { name: "Date Time", width: "13%" },
+    { name: "Urine (ML)", width: "17%" },
+    { name: "Feaces (ML)", width: "17%" },
+    { name: "Respiration (ML)", width: "17%" },
+    { name: "Skin (ML)", width: "13%" },
+    { name: "Prepared by", width: "20%" },
+  ];
   return (
     // <div className="flex h-[60vh] w-full flex-col justify-between bg-white">
     //   <div className="flex h-[25%] w-full flex-col space-y-[1rem] bg-[#f8eed6] px-[.5rem] pb-[.5rem]">
@@ -85,9 +85,21 @@ const IntakeOutputRecords: React.FC = () => {
     //   </div>
     // </div>
 
-    <div className="flex h-[60vh] w-full flex-col justify-between">
-      <DetailsTable name="Intake Records" btntxt="+ Add intake records" arr={arr1} />
-      <DetailsTable name="Output Records" btntxt="+ Add output records" arr={arr2} />
+    <div className="flex h-full w-full flex-col">
+      <div className="h-1/2 w-full">
+        <DetailsTable
+          name="Intake Records"
+          btntxt="+ Add intake records"
+          header={arr1}
+        />
+      </div>
+      <div className="h-1/2 w-full">
+      <DetailsTable
+          name="Output Records"
+          btntxt="+ Add output records"
+          header={arr2}
+        />
+      </div>
     </div>
   );
 };

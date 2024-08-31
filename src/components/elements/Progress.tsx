@@ -24,7 +24,7 @@ const Progress: React.FC = () => {
   //     ],
   //   },
   // ];
-  return <DetailsTable name="progress" btntxt="+ Add progress" arr={arr} />;
+  return <DetailsTable name="progress" btntxt="+ Add progress" header={arr} />;
 };
 
 export default Progress;
