@@ -42,8 +42,7 @@ const PatientInfo: React.FunctionComponent = () => {
     { name: "Laboratory", value: false, component: <PatientHistory /> },
     { name: "Discharge Summary", value: false, component: <PatientHistory /> },
   ]);
-  const [selectedComponent, setSelectedComponent] =
-    useState<ReactElement | null>(<GeneralInfo />);
+  const [selectedComponent, setSelectedComponent] = useState<ReactElement | null>(<GeneralInfo />);
   const handelBar = (index: number) => {
     const updatedList = arr.map((item, i) =>
       i === index ? { ...item, value: true } : { ...item, value: false },
@@ -82,7 +81,7 @@ const PatientInfo: React.FunctionComponent = () => {
             })}
           </span>
         </div>
-        <div className="h-full w-[70%] mt-[4.6rem]">{selectedComponent}</div>
+        <div className="h-full w-[70%] relative">{selectedComponent}</div>
       </div>
     </DashboardTemplate>
   );
