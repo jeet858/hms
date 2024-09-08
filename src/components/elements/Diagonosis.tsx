@@ -1,5 +1,6 @@
 import React from "react";
 import DetailsTable from "../tables/DetailsTable";
+import DiagonosisPopup from "../popup/DiagonosisPopup";
 
 const Diagonosis: React.FC = () => {
   const arr = [
@@ -21,7 +22,7 @@ const Diagonosis: React.FC = () => {
   //     ],
   //   },
   // ];
-  return <DetailsTable name="Diagonosis" btntxt="+ Add diagnosis" arr={arr} />;
+  return <DetailsTable name="Diagonosis" btntxt="+ Add diagnosis" header={arr} popup={<DiagonosisPopup/>}/>;
 };
 
 export default Diagonosis;

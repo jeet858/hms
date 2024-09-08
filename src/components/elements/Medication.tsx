@@ -25,7 +25,7 @@ const Medication: React.FC = () => {
   //     ],
   //   },
   // ];
-  return <DetailsTable name="Medication" btntxt="+ Add medication" arr={arr} />;
+  return <DetailsTable name="Medication" btntxt="+ Add medication" header={arr} />;
 };
 
 export default Medication;

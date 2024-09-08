@@ -10,9 +10,9 @@ const VitalSign: React.FC = () => {
     { name: "BP", width: "10%" },
     { name: "Respiration", width: "13%" },
     { name: "Weight", width: "13%" },
-    { name: "prepared by", width: "18%" },
+    { name: "prepared by", width: "17%" },
   ];
-  return <DetailsTable name="Vital Sign" btntxt="+ Add vital sign" arr={arr} />;
+  return <DetailsTable name="Vital Sign" btntxt="+ Add vital sign" header={arr} />;
 };
 
 export default VitalSign;
